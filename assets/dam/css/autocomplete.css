@@ -1,0 +1,54 @@
+/* Menu DIV */
+div.jqac-menu {
+	z-index: 200;
+  color: black;
+  background-color: white;
+  border: 1px solid #aaa;
+}
+/* unordered list for suggestions */
+.jqac-menu ul{
+  list-style: none;
+  margin: 1px;
+  padding: 1px;
+  overflow: hidden;
+}
+ 
+.jqac-menu li {
+}
+/* SPAN "link" */
+.jqac-menu .jqac-link {
+  cursor: hand; cursor: pointer;
+  display: block;
+  height: 65px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
+}
+/* highlighted menu item */
+.jqac-menu .jqac-highlight {
+  background-color: #ddf;
+}
+/* warning for no results */
+.jqac-menu .jqac-warning {
+  font-style: italic;
+  color: red;
+}
+/* loading for AJAX get */
+.jqac-menu .jqac-loading {
+  font-style: italic;
+  text-decoration: blink;
+}
+/* matched sub-string */
+.jqac-menu em {
+    font-weight: bold;
+}
+
+.jqac-menu span.jqac-link span.thumb {
+	display: block;
+	width: 120px;
+	height: 120px;
+	float: left;
+	background-repeat: no-repeat;
+  	background-position: center center;
+  	padding: 5px;
+}

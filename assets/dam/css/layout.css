@@ -1,0 +1,707 @@
+/*	
+	TYPE and COLOUR
+*/
+body { background-color: #fff; font-size: 10px; font-family: Verdana, Arial, sans-serif; line-height: 1.5; font-style: normal; }
+
+
+/* FONT COLOURS */
+h2,
+h3,
+h4,
+legend,
+label		{ color: #3f3f3f; font-weight: bold; }
+
+input			{ color: #3f3f3f; background-color: #fafafa; font-size: 11px; }
+input.button	{ background-color: #40833c; color: white; border-style: outset; border-width: 2px; }
+
+em		{ font-style: italic; }
+
+/* FONT SIZES */
+h2          { font-size: 1.6em; margin: 0 0 0.25em 0; }
+h2 small    { font-size: 0.7em; }
+h2 a, label a{ font-size: 0.7em; margin: 0 3px 0 3px; }
+h3          { font-size: 1.4em; }
+h3 small    { font-size: 0.7em; }
+h4          { font-size: 1.3em; }
+small       { font-size: 1.1em; }
+p           { font-size: 1.2em; }
+
+div.boxWithPadding p { line-height: 1.2; font-style: normal; }
+
+div#Footer p { font-size: 1.0em; color: silver;}
+
+label       { font-size: 1em;}
+
+input       {padding: 1px;}
+div#SavedSearches h2 { font-size: 1.3em;}
+.red { color: red;}
+
+p.uploaded { font-size: 1.8em; }
+
+strong { font-weight: bold;}
+
+/* LINK COLOURS */
+
+a { color: #4b9ba5; text-decoration: none; outline:none; border: none; }
+a:hover { color: red; }
+
+div.ClientName a {
+    text-decoration: underline;
+    color: #838383;
+}
+div.ClientName a:hover {
+    color: #8e1400;
+}
+
+div#Lightboxes ul li a,
+li.ImageSetsContainer li a,
+ul.ImageSet li a.red
+{
+	color: #8e1400; 			
+	font-size: 1.2em;
+	font-weight: bold;
+}
+a.deleteLink { color: #8e1400; }
+
+/* Horizontal Rules */
+
+hr { height: 1px; background-color: #838383; margin-right: 5px; border: none; }
+div#Lightboxes hr { margin-right: 0; }
+
+/* FORM COLOURS and Layout */
+
+fieldset.accessControls input#emailaddress { width:230px;}
+
+fieldset#addCollection label {display: block;}
+textarea#description,
+textarea#keywords
+ {height: 80px;width: 210px;}
+
+.box {
+	background-color: #fafafa;
+	border: 1px solid silver;
+}
+.noBordernoPadding {
+    border: none;
+    padding: 0;
+}
+input, textarea, select {
+    border: 1px solid #bdbdbd;
+}
+
+
+
+div.upload,
+fieldset.RenameImageSet {
+	background-color: #fafafa;
+	border: 1px solid silver;
+	margin-bottom: 10px;
+}
+input.add2Lb, input.delFromLb {
+    font-size: 11px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+/* Random icons and junk */
+
+
+/*	LAYOUT  */
+
+div#SuperHeaderWrapper		{ border-bottom: 0.1em solid silver; background-color: #fafafa; height: 6em; }
+div#SuperHeader 			{ width: 97.6em; margin: 0 auto; height: 2em; line-height: 2em; }
+div#SuperHeader p			{ font-size: 1em; text-align: right; color: #3f3f3f; }
+
+div#SuperHeader h1 a { display: block; float: left; margin: 0.3em 0em 0em 2em; width: 10em; height: 5em; background-image: url(BASEURLassets/dam/images/logo.png); background-repeat: no-repeat; text-indent: -999em; }
+
+div#SuperHeader form.Search { float: right; margin-top: 0.5em; }
+div#SuperHeader div.UserOptions { float: right; width: 40em; }
+
+div.Wrapper		{ width: 97.6em; position: relative; margin: 0px auto; }
+
+
+ul#TopNav { float: left; clear: right; }
+ul#TopNav li { display: inline; float: left; padding: 0 15px 0 0; }
+ul#TopNav li.last { padding: 0; }
+ul#TopNav li a { font-size: 1.6em; }
+
+div#ContentContainer { margin-top: 1em; clear: both; }
+
+div#MessageArea p                       { position: absolute; top: 1.8em; left: 50em; color: #FFF; font-weight: bold; padding: 0 1em; }
+div#MessageArea p.notification          { background-color: #a3bb5d; }
+div#MessageArea p.notification-error    { background-color: #b56457; }
+
+div.notify				{ background-color: #FFE157; padding: 10px; border: 4px dashed #FED000; margin-bottom: 10px; padding-bottom: 20px; }
+div.notify p a.dismiss	{ float: right; font-size: 0.8em; font-weight: bold; }
+
+p.notice { padding: 10px; }
+
+ul#Navotron						{ display: block; width: 97.6em; margin-bottom: 1em; }
+ul#Navotron li					{ float: left; height: 2.2em; line-height: 2.2em; padding: 0 0 0 0; position: relative; }
+ul#Navotron li.crumb			{ background-color: #4b9ba5; border-right: 0.1em solid white; }
+ul#Navotron li.crumb a			{ font-size: 1.2em; color: #fff; padding: 0 1em; }
+ul#Navotron li.crumb.last span	{ font-size: 1.2em; color: #fff; padding: 0 1em; }
+ul#Navotron li span.add			{ position: relative; z-index: 101; border: 2px solid #fff; border-bottom: none; display: block; margin-left: 0.5em; padding: 0 3px 0 21px; background: url(BASEURL/assets/dam/images/add.png) no-repeat 2px 2px; background-color: #fff; cursor: hand; }
+ul#Navotron li span.add:hover	{ text-decoration: none; }
+ul#Navotron li span.add.open	{ border-color: #ccc; }
+
+div.tagpicker		{ opacity: 0.97; z-index: 100; position: absolute; top: 2.2em; left: 0.5em; width: 60em;  display: block; background-color: #fff; border: 2px solid #ccc; padding: 1em; }
+div.tagpicker li a	{ font-size: 1.2em; padding: 0 1.5em 0 0; }
+
+div.tagpicker ul.alpha a { padding: 0 0 0 0; margin: 0 1em 0 0; }
+div.tagpicker ul.alpha { }
+
+ul.tags			{ max-height: 25em; width: 60em; overflow-y: auto; }
+ul.tags li a 	{ padding: 0 0 0 0; margin: 0 1em 0 0; }
+ul.tags li a 	{ padding: 0 0 0 0; margin: 0 1em 0 0; }
+
+/* MAIN POSITIONING STUFF */
+
+div#Lightboxes { float: left; width: 52em; }
+
+div#Lightboxes ul { }
+div#Lightboxes ul li { display: block; float: left; width: 52em; margin: 0; padding: 0.5em 0 0 0; border-top: 1px solid #ccc; }
+div#Lightboxes ul li a.red		{ }
+div#Lightboxes ul li a.thumb	{ display: block; clear: right; float: left; position: relative; height: 100px; width: 100px; margin: 0.75em 1.8em 1em 0; }
+div#Lightboxes small		{ display: block; float: right; color: #888; }
+div#Lightboxes h2 small		{ display: inline; }
+
+div#Lightboxes.all ul.container			{ width: 97.6em; }
+div#Lightboxes.all ul li.Lightbox	{ width: 45em; margin: 0 1.5em 2em 0; display: block; float: left; border: 1px solid #fff; padding: 1em; }
+div#Lightboxes.all ul li small	{ font-size: 1.1em; }
+div#Lightboxes.all ul li a		{ color: #8e1400; font-size: 1.2em; font-weight: bold; }
+div#Lightboxes.all ul li li		{ width: 140px; display: block; float: left; border: none; padding: 0 0 0 0; margin: 0 0 0 1em; }
+div#Lightboxes.all ul li li a	{ }
+div#Lightboxes.all ul li li a.thumb	{ height: auto; padding: 0 0 0 0; margin: 0 0 0 0; }
+div#Lightboxes.all ul li ul		{ width: ; }
+
+div#RecentUploads		{ float: right; width: 41em; border-left: 0.1em solid #ccc; padding-left: 2em; }
+
+div#RecentUploads ul			{ padding: 0 0 0 0; }
+div#RecentUploads ul li			{ float: left; padding: 0 1.5em 1.5em 0; }
+div#RecentUploads ul li a		{ display: block; width:120px; height:120px; text-indent: -9999px; background-repeat: no-repeat; background-position: center center; }
+div#RecentUploads ul li a:hover { border-color: #4B9BA5; }
+
+div#ImageSets		{ margin-top: 2em; clear: both; }
+div#ImageSets h2	{ }
+
+
+
+
+ul.ImageSet				{ margin-top: 1.5em; }
+ul.ImageSet li			{ float: left; display: block; width: 16em; min-height: 25em; margin: 0 3em 0 0; }
+ul.ImageSet li small	{ position: relative; }
+ul.ImageSet li a.thumb img { margin: 0 auto; }
+
+ul.Lightbox			{ width: 70em; }
+ul.Lightbox li		{ float: left; display: block; width: 14em; min-height: 25em; margin: 0 3em 0 0; }
+
+div#AccessControls			{ float: right; width: 22em; }
+div#AccessControls table	{ font-size: 0.9em; margin-top: 10px; }
+div#AccessControls p		{ margin-top: 0.8em; line-height: 1.2; }
+div#AccessControls form#accessControl			{  }
+
+div.ViewImage		{ width: 97.6em; }
+div.ViewImage h2	{ font-size: 2.2em; padding: 0.25em 0 0.25em 0; }
+
+div.PageLinks { text-align: center; padding-bottom: 2em; }
+div.PageLinks a, div.PageLinks span { font-size: 1.2em; padding: 0.3em; border: 0.1em solid silver; background-color: #fff; }
+div.PageLinks a { border-color: #4B9BA5; }
+div.PageLinks a:hover { border-color: #4B9BA5; background-color: #4B9BA5; color: #fff; }
+div.PageLinks span { background-color: #4B9BA5; border-color: #4B9BA5; color: #fff; }
+
+/* GENERAL TABLE STYLES */
+
+table            { margin-top: 10px; font-size: 1.2em; vertical-align:  bottom;}
+table a          { font-weight: bold;}
+table th         { text-align: center;  font-weight: bold; border-bottom: 1px solid #888; vertical-align: bottom; padding-top: 3px;}
+
+table th.hide    { background-color: #fafafa; width: 50px; }
+table tr         { text-align: center; border-bottom: 1px solid #888; }
+
+table td input   {  }
+table td         { vertical-align:  bottom; }
+table td.button  { width: 80px; }
+table td.button input  { width: 50px; text-align: center; }
+
+tr.gridcontrol th {text-align: left;}
+tr.gridcontrol th.delButton {text-align: right;}
+tbody tr td { padding: 3px 0 3px 0; }
+th.checkbox-grid,
+th.sortby { width: 25px; }
+th.datefield-grid {  }
+
+
+
+
+div.noimages {
+	background-image: url('BASEURLassets/dam/images/noimages.jpg');
+	width: 396px;
+	height: 490px;
+}
+div.nolightboxes {
+	background-image: url('BASEURLassets/dam/images/nolightboxes.jpg');
+	width: 527px;
+	height: 432px;
+}
+
+li.deletelink {padding-top: 5px;}
+
+div.tagsContainer input#keywords { display: inline; width: 140px; margin-right: 5px;}
+
+div#imageHolder						{ }   
+div#imageHolder						{ float: left; }
+div#imageHolder ul					{}
+div#imageHolder ul li.image			{ position: relative; }
+div#imageHolder ul li.image p.uploader		{ position: absolute; bottom: 5px; right: 5px; margin:0; padding: 0; color: #fff; font-size: 1em; }
+div#imageHolder ul li.actions		{ display: block; height: 2.2em; line-height: 2.2em; }
+div#imageHolder ul li.actions p		{ padding: 0 0; }
+div#imageHolder ul li.actions p input	{ margin: 0; padding: 0; float: right; }
+
+div.imageInformation		{ float: right; width: 22em; padding: 0 1em; border: 1px solid #fff; background-color: #fafafa; }
+div.imageInformationProps	{ width: 21.5em; }
+
+.imageInformation h3,
+.imageInformationProps h3		{ margin-top: 5px; }
+
+.imageInformation label,
+.imageInformationProps label	{ font-weight: bold; display: block; }
+
+.imageInformation li,
+.imageInformationProps li,
+.imageInformation p,
+.imageInformationProps p		{ line-height: 1.2; font-size: 1.2em; }
+
+.imageInformation select,
+.imageInformationProps select 	{ width: 90%; display: block; }
+
+.imageInformation option,
+.imageInformationProps option	{ width: auto; }
+
+.imageInformation p.uploader	{ font-size: 1.0em; margin-top: 5px; }
+
+div#Comments			{ width: 40em; }
+div#Comments h3			{ margin-top: 1.5em; }
+div#Comments textarea	{ width: 400px; height: 80px; }
+div#Comments input		{ margin-top: 0.5em; }
+
+div#Comments ol			{ list-style-type: decimal; }
+div#Comments ol li		{ clear: both; width: 40em; }
+
+div#Comments ol li h4	{ border-bottom: 0.1em solid silver; }
+div#Comments ol li img	{ padding-top: 0.25em; }
+
+div#Comments ol li blockquote		{ float: left; width: 31em; padding: 0.5em 2em 0.5em 0.5em; background-color: #fafafa; }
+div#Comments ol li blockquote cite	{ display: block; text-align: right; font-style: italic; background-color: #fff;  }
+div#Comments ol li blockquote span	{ font-size: 1.2em;  }
+
+form.addkeywords input {
+    margin-top: 5px;
+}
+form.lightboxselect input {
+    margin-top: 10px;
+}
+
+ul.swatches {
+}
+ul.swatches li {
+    text-indent: -9999px;
+    float: left;
+    width: 41px;
+
+}
+a.swatch { display: block; }
+
+fieldset.orphanProps {
+    width: 300px;
+    position: relative;
+    margin: 2.5em 0 0 0;
+}
+fieldset.orphanProps label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 2px;
+}
+fieldset.orphanProps label,
+fieldset.orphanProps input,
+fieldset.orphanProps select {
+    width: 300px;
+}
+
+
+
+ul.NextPrev { position:relative; display: block; margin: 10px auto; width: 200px; height: 100px; position: relative; }
+ul.NextPrev li a { display: block; background-color: #fafafa; width:85px; }
+
+ul.NextPrev li a.thumb { text-align: center; display: block; background-repeat: no-repeat; width:85px; height: 85px; background-position: center center; }
+
+ul.NextPrev li { display: block; }
+ul.NextPrev li.next  { position: absolute; top: 0px; right: 0px; }
+ul.NextPrev li.prev  {  }
+ul.NextPrev li.next a { text-align: right; float: right; clear: right; }
+ul.NextPrev li.next a.thumb { float: right; }
+
+
+
+ul.orphans				{ margin: 1em 0 0 0; }
+ul.orphans li			{ width: 190px; float: left; margin: 15px 3.2em 10px 0; padding: 10px; background-color:#efefef;}
+ul.orphans li label		{display: block; font-weight: bold; clear: left;}
+ul.orphans li a.thumb	{display: block; width: 140px; height: 160px; margin: 0 auto; background-repeat: no-repeat; background-position: center center;}
+
+ul.orphans input,
+ul.orphans textarea,
+ul.orphans select {
+    width: 188px;
+    margin-bottom: 5px; 
+}
+ul.orphans textarea {
+    height: 80px;
+}
+ul.orphans input.checkbox {
+	width: auto;
+	float: left;
+	margin-right: 10px;
+}
+ul.orphans label.oops {
+	width: 188px;
+	font-size: 1.0em;
+	clear: none;
+}
+
+input.orphansubmit {
+	clear: left;
+	text-align: center;
+	position: relative;
+	left: 340px;
+}
+
+input.delFromLbox { font-size: 0.8em; }
+
+
+div#upload ol { background-image: url(BASEURLassets/dam/images/UploadOlBg.png); background-repeat: repeat-y; }
+div#upload li { padding-left: 100px; background-image: url(BASEURLassets/dam/images/UploadOlLiBg.png); background-repeat: no-repeat; background-position: bottom left;}
+
+
+.left {
+float: left;
+}
+.right {
+float: right;
+}
+
+/* LIGHTBOX FOOTER */
+
+#globalLightboxContainer h2 { cursor: pointer; display: inline; padding-right: 10px; margin-top: 0; padding-top: 0; font-size: 1.3em;}
+
+#globalLightboxContainer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	padding: 5px 10px 5px 10px;
+	background-color: #fafafa;
+	border-top: 1px solid #888;
+}
+#globalLightboxContainer div {
+    width: 90%;
+    overflow-x: auto;
+    height: 75px;
+    position: relative;
+    margin: 0 auto;
+    border: 1px dashed #888;
+    margin-top: 5px;
+    background-color: #fafafa;
+}
+#globalLightboxContainer ul {
+
+    display: block;
+    height: 60px;
+    width: 2000px;
+    overflow: hidden;
+}
+
+#globalLightboxContainer ul li {
+	float: left;
+	padding: 5px;
+}
+
+#globalLightboxContainer ul li a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-indent: -4999em;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+#globalLightboxContainer a.createLightbox,
+#globalLightboxContainer a.createbox,
+#globalLightboxContainer a.cancelcreatebox,
+h2 input {
+    margin-left: 5px;
+}
+
+#globalLightboxContainer p#newMessage {
+    float: right;
+    position:absolute;
+	right:35px;
+	top:10px;
+	font-weight: bold;
+}
+
+#globalLightboxContainer em.nolightboxes {
+    padding-right: 5px;
+}
+
+
+.usersdetailsForm fieldset {
+    width: 400px;
+    float: left;
+    margin-right: 10px;
+    padding-top: 5px;
+    background-color: #fff;
+}
+.usersdetailsForm input.submit {
+    clear: left;
+    float: left;
+}
+.usersdetailsForm input {
+    margin-bottom: 5px;
+}
+.usersdetailsForm input.submit {
+    clear: both;
+}
+.usersdetailsForm p {
+    line-height: 1.2;
+}
+fieldset.personalInfo {
+    clear: left;
+    
+}
+fieldset.loginInfo label,
+fieldset.personalInfo label {
+    display: block;
+    clear: right; 
+}
+fieldset.loginInfo p {
+width: 210px;
+padding-right: 5px;
+float: right;
+color: #888;
+font-size: 1.1em;
+}
+fieldset.userControl {
+    float: right;
+    width: 275px;
+}
+fieldset.userControl label {
+    display: block;
+    font-weight: normal;
+}
+fieldset.userControl input {
+    margin-right: 10px;
+}
+fieldset.userControl select#usertype {
+    margin-bottom: 10px;
+}
+
+/*----- SIDEBAR -----
+
+input#searchterms_ajax {
+    display: block;
+    position:relative;
+    margin: 0 auto 5px auto;
+    width: 182px;
+    border: 1px solid #bdbdbd;
+
+}
+input.searchbutton {
+    position:relative;
+    float: right;
+    display: block;
+    background-color: #fff;
+    border: none;
+    border: 0;
+    color: #4b9ba4;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: bold;
+}
+*/
+
+div#SavedSearches h2 {
+    clear: both;
+}
+div#SavedSearches select {
+    margin-bottom: 5px;
+    display: block;
+    position:relative;
+    margin: 0 auto 5px auto;
+    width: 184px;
+    border: 1px solid #bdbdbd;
+}
+div#Sidebar fieldset {
+    border: 1px solid silver;
+    background-color: #fafafa;
+    padding: 5px 10px 10px 10px;
+    margin: 0 0 5px 0;
+    clear: both;
+
+}
+
+div#Sidebar fieldset ul {
+    margin-left: 20px;
+}
+
+div#Sidebar fieldset #orientation_door {
+    margin-left: 10px;
+}
+
+div#Sidebar fieldset h3 {
+    padding-left: 12px;
+    background-image: url(BASEURLassets/dam/images/twisterUp.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+div#Sidebar fieldset h3.open {
+    padding-left: 12px;
+    background-image: url(BASEURLassets/dam/images/twisterDown.png);
+
+}
+
+div#Sidebar fieldset h4 {
+    padding-left: 12px;
+    background-image: url(BASEURLassets/dam/images/twisterUp.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+div#Sidebar fieldset h4.open {
+    padding-left: 12px;
+    background-image: url(BASEURLassets/dam/images/twisterDown.png);
+}
+
+ul#imagesets_door li label  { display: block; }
+ul#imagesets_door li span   { width: 85%;float: right; }
+
+div.halfcolumn {
+	width: 49%;
+	float: left;
+}
+
+table.usersgrid td img {
+	float: left;
+	padding: 4px;
+	border: 1px solid #CCC;
+	margin: 0 4px;
+}
+
+table.usersgrid td {
+	text-align: left;
+	padding: 5px 0;
+}
+table.usersgrid tr {
+	border-bottom-color: #EEE;
+}
+table.usersgrid tr:hover {
+	background-color: #EEEEEE;
+}
+table.usersgrid td.actions {
+	font-size: 0.9em;
+}
+
+p.gravatar {
+	float: right;
+	width: 100px;
+	text-align: center;
+	font-size: 0.9em;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+p.gravatar img {
+	padding: 4px;
+	border: 1px solid #CCC;
+	margin: 0 4px;
+}
+
+/*----- FOOTER -----*/
+div#Footer {
+    padding-top: 20px;
+    clear: both;
+}
+
+
+
+/* Login */
+
+form.loginform fieldset {
+	width: 335px;
+	padding: 180px 0 0 82px;
+	margin: 50px auto 0 auto;
+	border: none;
+	background: url(BASEURLassets/dam/images/loginLogo.png) no-repeat 10px 32px;
+}
+form.loginform label {
+	margin-top: 9px;
+}
+form.loginform label,
+form.loginform input {
+	display: block;
+}
+
+
+
+form.loginform input {
+	width: 239px;
+	display: block;
+	font-size:1.3em;
+	padding: 3px;
+}
+form.loginform input#openid_identifier { padding-left: 22px; background: url(BASEURLassets/dam/images/openid_small_logo.png) no-repeat 3px 3px; width: 220px; }
+form.loginform input#emailaddress { padding-left: 22px; background: url(BASEURLassets/dam/images/user_go.png) no-repeat 3px 3px; width: 220px; }
+form.loginform input#password { padding-left: 22px; background: url(BASEURLassets/dam/images/key.png) no-repeat 3px 3px; width: 220px; }
+
+form.loginform input.button {
+	width: 250px;
+	background-color: #40833C;
+	margin-top: 10px;
+	color: white;
+}
+form.loginform p {
+	margin-top: 3px;
+}
+div#footer p {
+	text-align: center;
+}
+
+
+p.notification-error {
+	padding: 5px;
+	border-top: 1px solid red;
+	border-bottom: 1px solid red;
+	background-color: #F6B9B9;
+}
+
+
+.clearfix:after {  
+    content: ".";  
+    display: block;  
+    clear: both;  
+    visibility: hidden;  
+    line-height: 0px;  
+    height: 0;
+}  
+   
+.clearfix {  
+    display: inline-block;  
+}  
+   
+html[xmlns] .clearfix {  
+    display: block;  
+}  
+   
+* html .clearfix {  
+    height: 1%;  
+}
