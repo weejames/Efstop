@@ -13,9 +13,11 @@ error_reporting(E_ALL); //Error reporting level
 
 //paths to CI Folders
 
-$system_folder = "./CodeIgniter_1.6.1_Patched/system";
+//$system_folder = "./CodeIgniter_1.6.1_Patched/system";
+
+$system_folder = "../codeigniter_171/system";
 $application_folder = "application";
-$resource_folder = "./CodeIgniter_1.5.3_Resources"; //contains shared models, controllers etc.
+//$resource_folder = "./CodeIgniter_1.5.3_Resources"; //contains shared models, controllers etc.
 
 /*
 |===============================================================

@@ -35,13 +35,13 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
-$db['default']['username'] = "";
-$db['default']['password'] = "";
-$db['default']['database'] = "";
+$db['default']['username'] = "root";
+$db['default']['password'] = "g0ld3nm0nk3y";
+$db['default']['database'] = "efstop";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = false;
-$db['default']['db_debug'] = false;
+$db['default']['db_debug'] = true;
 $db['default']['cache_on'] = false;
 $db['default']['cachedir'] = "";
 $db['default']['char_set'] = "utf8";

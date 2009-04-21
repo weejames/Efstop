@@ -7,7 +7,7 @@ class Image extends DAM {
 	protected $package = 'dam_controllers';
 	protected $current_module = 'Upload Images';
 	private $s3bucket = ''; // TODO: make a config setting
-	private $local_image_path = ''; // TODO: make a config setting
+	private $local_image_path = '/var/www/vhosts/efstop.local/efstop_images/'; // TODO: make a config setting
 	
 	public function Image() {
 		$login = 1;
@@ -29,10 +29,10 @@ class Image extends DAM {
     	$this->load->library('getpaging');
     	
     	$limit_per_page = 20;
-    	
+
     	if ($this->tags) $tagged = $this->tagsmodel->searchTagged($this->tags, 'images');
     	else $tagged = false;
-    	
+
     	$tagged_norm = array();
     	if ($tagged) foreach ($tagged as $tag) $tagged_norm[] = $tag->itemid;
     	
@@ -163,6 +163,7 @@ class Image extends DAM {
     	}
     	
     	if ($submit) {
+			
     		$config['upload_path'] = $this->local_image_path;
 			$config['allowed_types'] = 'gif|jpg|png|psd|tif';
 		
@@ -269,7 +270,9 @@ class Image extends DAM {
 				
 			} else {
 				$this->db_session->set_flashdata('flasherror', $this->upload->display_errors());
+				echo $this->upload->display_errors();
 			}
+			
 			if ($flashupload) echo ' ';	
     	} else {
 			$this->layout->buildPage('images/upload', $this->view_data);
@@ -517,8 +520,6 @@ class Image extends DAM {
     	
     	if ( $image && ($image->creatorid == $this->authentication->getUserId() || $this->imagesetmodel->userHasFullAccessToImageset($this->authentication->getUserId(), $image->imagesetid)) ) {
     		unlink('./image_store/'.$image->filename);
-    		unlink('./image_store/preview/'.$image->previewname);
-    		unlink('./image_store/thumbs/'.$image->thumbname);
 
     		$this->imagemodel->delete_by_pkey($imageid);
     		$this->tagsmodel->deTag($imageid, 'images');

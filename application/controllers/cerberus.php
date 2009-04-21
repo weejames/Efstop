@@ -42,9 +42,9 @@ class Cerberus extends Admin {
 				
 				if ($this->authentication->isLoggedIn()) {
 					$this->load->model('accountsmodel');
-					
+
 					$account = $this->accountsmodel->retrieve_by_pkey($this->authentication->getAccountId());
-					
+
 					if ($account->disabled) {
 						$this->authentication->logout();
 						$this->db_session->set_flashdata('flasherror', 'Your account has been disabled.  If you think this is a mistake please contact support.');
