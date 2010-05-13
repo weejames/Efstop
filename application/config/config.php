@@ -11,7 +11,7 @@
 |	http://www.your-site.com/
 |
 */
-$config['base_url'] = BASE_URL;
+$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'];
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ $config['base_url'] = BASE_URL;
 | variable so that it is blank.
 |
 */
-$config['index_page'] = "index.php";
+$config['index_page'] = "";
 
 // ci1.5.4 addition
 /*

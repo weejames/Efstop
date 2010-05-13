@@ -1,23 +1,19 @@
 <?php
-
 $dir = dirname($_SERVER["SCRIPT_NAME"]);
 
 define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST']); //the base url of the site
 define('DB_PROFILE', 'live'); //which database profile to use
 define('DEVMODE', 0); //are we in dev mode?
 define('FORCE_PORTAL', 1); // allows us to force a portal selection when server host wont work (in dev environment)
-define('INDEX_PAGE', '');
-define('APPTYPE', 'dam');
 
 error_reporting(E_ALL); //Error reporting level
+ini_set('display_errors', '1');
 
 //paths to CI Folders
 
-//$system_folder = "./CodeIgniter_1.6.1_Patched/system";
 
-$system_folder = "../codeigniter_171/system";
+$system_folder = "./codeigniter_171/system";
 $application_folder = "application";
-//$resource_folder = "./CodeIgniter_1.5.3_Resources"; //contains shared models, controllers etc.
 
 /*
 |===============================================================

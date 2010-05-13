@@ -1,20 +1,20 @@
 <?php
 
 class Admin extends Controller {
+
     protected $theme = 'admin';
     protected $view_data = array();
     protected $package;
     protected $current_module;
 	protected $ajax;
-    
-	public function Admin($requirelogin = 1) {
-		parent::Controller();
+
+	public function __construct($requirelogin = 1) {
+		parent::__construct();
 		if (defined('ENABLE_PROFILER') && ENABLE_PROFILER) $this->output->enable_profiler();
 		
 		//set admin theme.  we can move this to a database in the future if needed
 		if ($this->config->item('admin_theme')) $this->theme = $this->config->item('admin_theme');
-		
-		
+				
         $this->load->library('authentication');
 		$this->layout->resetTheme($this->theme);
 		
@@ -43,15 +43,6 @@ class Admin extends Controller {
 		$this->view_data['activesection'] = $this->current_module;
 		
 		$this->view_data['page_title'] = '';
-		
-		switch(APPTYPE) {
-			case "crm":
-				$this->view_data['modules'] = array( 'Clients' => site_url('clients/'), 'Projects' => site_url('projects/'));
-			break;
-			case "cms":
-				$this->view_data['modules'] = array( 'Home' => site_url('/cms'), 'All Content' => site_url('cms/content'), 'User Administration' => site_url('cms/useradmin'), 'Site Configuration' => site_url('cms/siteconfiguration'),);
-			break;
-		}
 		
 		//if (!$this->_checkAccess()) show_404();
 		

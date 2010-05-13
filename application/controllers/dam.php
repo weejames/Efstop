@@ -11,7 +11,7 @@ class DAM extends Admin {
 	
 	
 	public function DAM($requirelogin = 1) {
-		parent::Admin($requirelogin);
+		parent::__construct($requirelogin);
 		$this->load->model('basemodel');
 		$this->load->helper('image_helper');
 		

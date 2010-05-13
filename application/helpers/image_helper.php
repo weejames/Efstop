@@ -1,7 +1,7 @@
 <?php
 
 	function resizedImageURL($path, $width = false, $height = false, $maintain_ratio = false, $master_dim = false, $crop_position = false) {
-		$return_url = site_url('assetmanager/imagesizer/'.urlencode(urlencode($path)));
+		$return_url = site_url('assetmanager/imagesizer/'.rawurlencode(rawurlencode(rawurlencode($path))));
 		
 		if ($width && is_integer($width)) $return_url .= '/'.$width;
 		else $return_url .= '/false';

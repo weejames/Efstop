@@ -1,11 +1,11 @@
 <?php
 
-if (file_exists(APPPATH.'controllers/admin.php')) include_once(APPPATH.'controllers/admin.php');
+include_once('admin.php');
 
 class Cerberus extends Admin {
     
 	public function Cerberus() {
-        parent::Admin(false);
+        parent::__construct(false);
         $this->load->library('authentication');
         $this->load->helper('cookie');
         

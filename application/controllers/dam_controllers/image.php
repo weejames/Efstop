@@ -7,7 +7,7 @@ class Image extends DAM {
 	protected $package = 'dam_controllers';
 	protected $current_module = 'Upload Images';
 	private $s3bucket = ''; // TODO: make a config setting
-	private $local_image_path = '/var/www/vhosts/efstop.local/efstop_images/'; // TODO: make a config setting
+	private $local_image_path = '/var/www/phpapps/efstop/image_store/'; // TODO: make a config setting
 	
 	public function Image() {
 		$login = 1;
@@ -1025,7 +1025,7 @@ class Image extends DAM {
 					$tagid = $this->tagsmodel->tagExists(trim($tag));
 					
 					//if not already in db add tag
-					if (!$tagid) $tagid = $this->tagsmodel->add(array('tag' => trim($tag)));
+					if (!$tagid) $tagid = $this->tagsmodel->add(array('tag' => trim($tag), 'taguri' => strtolower(trim(url_title($tag)))));
 					
 					//tag image
 					$this->tagsmodel->tagItem($imageid ,'images' ,$tagid);

@@ -109,15 +109,15 @@ class AssetManager extends Controller {
     	$filetype = end(explode(".", $filepath));
     	
     	$cachedfile = md5($filepath.(int)$width.(int)$height.(int)$maintain_ratio.$master_dim.$crop_position).'.'.$filetype;
-    	
+
     	if ($maintain_ratio == 'false') $maintain_ratio = false;
     	else $maintain_ratio = true;
-    	
+
     	if (file_exists('./'.$filepath)) {
 			
 			$cache_path = $this->config->item('cache_path');
 			
-			if (!strlen($cache_path)) $cache_path = BASEPATH.'cache/';
+			if (!strlen($cache_path)) $cache_path = 'image_store/cache/';
 			
 			if (!file_exists($cache_path.$cachedfile)) {
 				//resize image
@@ -183,7 +183,7 @@ class AssetManager extends Controller {
 	
 			readfile($finalpath);
 		} else {
-			show_404();
+			//show_404();
 		}
 		
 		die();
