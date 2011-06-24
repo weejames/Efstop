@@ -27,7 +27,7 @@ class ImageModel extends BaseModel {
 						INNER JOIN images I ON (TG.itemid = I.id AND I.accountid = ".intval($accountid).")
 						LEFT JOIN collections_tags CT ON (T.id = CT.tags_id) LEFT JOIN collections C ON (CT.collections_id = C.id) ";
 
-		if ($imageids) $sql .= " WHERE I.id IN (".implode($imageids, ',').")";
+		if (is_array($imageids)) $sql .= " WHERE I.id IN (".implode($imageids, ',').")";
 						
 		$sql .= " GROUP BY TG.tag_id
 				ORDER BY T.tag";

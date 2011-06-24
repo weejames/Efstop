@@ -27,7 +27,7 @@ class Image extends DAM {
     	$this->load->model('lightboxmodel');
     	$this->load->model('tagsmodel');
     	$this->load->library('getpaging');
-    	
+
     	$limit_per_page = 20;
 
     	if ($this->tags) $tagged = $this->tagsmodel->searchTagged($this->tags, 'images');

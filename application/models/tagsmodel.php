@@ -135,12 +135,13 @@ class TagsModel extends BaseModel {
 
 				if (count($resultarray)) {
 
+
 				$sql = "SELECT DISTINCT T.itemid, T.itemtype
 						FROM tagged T
-						WHERE T.itemid IN (".$this->db->escape(implode($resultarray)).")";
+						WHERE T.itemid IN (".$this->db->escape(implode(',', $resultarray)).")";
 			
 					$rs = $this->db->query($sql)->result();
-
+					
 					if (count($rs)) return $rs;
 					else return false;
 					

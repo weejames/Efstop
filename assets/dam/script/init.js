@@ -50,7 +50,7 @@ $(document).ready (
 		});
 		$('input[type=text]').blur();
 		
-		$('#fileUpload').children().hide();
+		/*$('#fileUpload').children().hide();
 		$('#fileUpload').flash({
 							src: baseURL + 'assets/dam/flash/FlashFileUpload.swf',
 							width: 680,
@@ -63,7 +63,7 @@ $(document).ready (
 							},
 							{ version: '9.0.47',
 							  expressInstall: true });
-		$('div#upload ol li:eq(2)').hide();
+		$('div#upload ol li:eq(2)').hide();*/
 		
 		
 		$('.deleteLink').confirmDelete();
