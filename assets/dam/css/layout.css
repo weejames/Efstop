@@ -152,8 +152,8 @@ div#Lightboxes ul li { display: block; float: left; width: 52em; margin-bottom: 
 
 div#Lightboxes ul li a.thumb	{ display: block; clear: right; float: left; position: relative; height: 100px; margin: 0 0.75em 0.75em 0; }
 
-div#Lightboxes.all ul.container			{ width: 97.6em; }
-div#Lightboxes.all ul li.Lightbox	{ width: 47em; margin: 0 1.75em 2em 0; display: block; float: left; }
+div#Lightboxes.all		{ width: 97.6em; }
+div#Lightboxes.all ul li.Lightbox	{ width: 100%; display: block; }
 
 div#Lightboxes.all ul li li		{ display:block; float: left; width: auto; }
 div#Lightboxes.all ul li li img	{ display: block; float: left; margin: 0 0.75em 0.75em 0; }

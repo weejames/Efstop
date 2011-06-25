@@ -51,15 +51,13 @@
 	<div id="ContentContainer">
 		<?php if ($this->authentication->isLoggedIn()): ?>
 		
-		<?php if($tag_array):?><p><a href="" class="addall">Add all images</a> to lightbox.</p><input type="hidden" id="tag_string" value="<?=$tag_string;?>" /><?php endif;?>
-		
 		<ul id="Navotron" class="clearfix">
-			<li class="crumb"><a class="root" href="<?=site_url('image')?>"><?=$account->account_name;?></a></li>
+			<li class="crumb"><a class="root" href="<?=site_url('image')?>"><?=$account->account_name;?>'s Library</a></li>
 			<?php $cur_string = ''; foreach($tag_array as $key => $tag): $cur_string .= $tag.'/'; ?>
 				<li class="crumb <?php if ( count($tag_array) - 1 == $key ):?>last<?php endif;?>"><a href="<?=site_url('image/'.$cur_string);?>"><?=ucfirst($tag);?></a></li>
 			<?php endforeach;?>
 			<?php if ($imagetags):?>
-			<li><span class="add">Filter</span>
+			<li><span class="add">Filter by Tag</span>
 				<div class="tagpicker" style="display: none;">
 					<ul class="alpha clearfix">
 						<li><a href="#">All</a></li>
@@ -102,4 +100,10 @@
 			</li>
 			<?php endif;?>
 		</ul>
+		
+		<?php if($tag_array):?>
+		<p>
+			<a href="" class="addall">Add all of these images to the current lightbox</a></p>
+			<input type="hidden" id="tag_string" value="<?=$tag_string;?>" />
+		<?php endif;?>
 		<?php endif;?>

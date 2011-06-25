@@ -1,5 +1,5 @@
 <div id="Lightboxes" class="all">
-	<h2>My Lightboxes <a href="#" class="createLightbox">Add New</a></h2>
+	<h2>My Lightboxes</h2>
 
 	<ul class="container clearfix">
 	<?php if ($lightboxes):?>

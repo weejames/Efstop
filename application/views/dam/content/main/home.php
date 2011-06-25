@@ -1,7 +1,7 @@
 <?=$intro_notification;?>
 
-<div id="My Lightboxes" class="clearfix">
-    <h2 class="indent"><a href="<?=site_URL('dam_controllers/lightbox');?>">Lightboxes</a></h2>
+<div id="Lightboxes" class="clearfix">
+    <h2><a href="<?=site_URL('dam_controllers/lightbox');?>">Lightboxes</a></h2>
     
 	<?php if ($lightboxes):?>
     <ul class="clearfix">
