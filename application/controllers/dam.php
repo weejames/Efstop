@@ -31,7 +31,8 @@ class DAM extends Admin {
 		$this->view_data['searchOrientation'] = "";
 		$this->view_data['searchImagesets'] = array();
 		
-		$this->view_data['modules'] = array('My Lightboxes' => site_URL('dam_controllers/lightbox'),
+		$this->view_data['modules'] = array('Image Library' => site_URL('dam_controllers/image'),
+											'My Lightboxes' => site_URL('dam_controllers/lightbox'),
 											'Image Upload' => site_URL('dam_controllers/image/upload'));
 		
 		if ($this->authentication->isUserType( array('super', 'admin') )) $this->view_data['modules']['User Management'] = site_URL('dam_controllers/damusers');
