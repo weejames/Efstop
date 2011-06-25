@@ -19,9 +19,8 @@ h4          { font-size: 1.3em; }
 small       { font-size: 1.1em; }
 p           { font-size: 1.2em; }
 
-div.boxWithPadding p { line-height: 1.2; font-style: normal; }
 
-div#Footer p { font-size: 1.0em; color: silver;}
+#Footer { font-size: 1.0em; color: silver; }
 
 label       { font-size: 1em; }
 input       { padding: 1px; }
@@ -29,7 +28,8 @@ input       { padding: 1px; }
 div#SavedSearches h2 { font-size: 1.3em;}
 .red { color: red;}
 
-p.uploaded { font-size: 1.8em; }
+#upload p,
+#upload fieldset { margin-bottom: 1.5em }
 
 /* Colour */
 
@@ -342,11 +342,6 @@ input.orphansubmit {
 }
 
 input.delFromLbox { font-size: 0.8em; }
-
-
-div#upload ol { background-image: url(BASEURLassets/dam/images/UploadOlBg.png); background-repeat: repeat-y; }
-div#upload li { padding-left: 100px; background-image: url(BASEURLassets/dam/images/UploadOlLiBg.png); background-repeat: no-repeat; background-position: bottom left;}
-
 
 .left {
 float: left;
