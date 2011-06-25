@@ -183,10 +183,23 @@ div.ViewImage		{ width: 97.6em; }
 div.ViewImage h2	{ font-size: 2.2em; padding: 0.25em 0 0.25em 0; }
 
 div.PageLinks { text-align: center; padding-bottom: 2em; }
-div.PageLinks a, div.PageLinks span { font-size: 1.2em; padding: 0.3em; border: 0.1em solid silver; background-color: #fff; }
+div.PageLinks a, div.PageLinks span { font-size: 1.2em; padding: 0.1em 0.3em; border: 0.1em solid silver; background-color: #fff; }
+.PageLinks.left { padding:0.3em 0;}
+
 div.PageLinks a { border-color: #4B9BA5; }
 div.PageLinks a:hover { border-color: #4B9BA5; background-color: #4B9BA5; color: #fff; }
 div.PageLinks span { background-color: #4B9BA5; border-color: #4B9BA5; color: #fff; }
+
+.PageLinks a.first,
+.PageLinks a.previous,
+.PageLinks a.next,
+.PageLinks a.last { border-color: white; }
+
+.PageLinks a:hover.first,
+.PageLinks a:hover.previous,
+.PageLinks a:hover.next,
+.PageLinks a:hover.last { border-color: white; background-color: white; color: #4B9BA5 }
+
 
 /* GENERAL TABLE STYLES */
 

@@ -61,11 +61,11 @@
 
 <div id="ImageSets">
 	<?php if ($images):?>
-	<div class="PageLinks">
+	<div class="PageLinks left">
 	<p><?=$showing_string;?></p>
 	</div>
 	<?php if ($page_links):?>
-	<div class="PageLinks">
+	<div class="PageLinks right">
 		<?=$page_links;?>
 	</div>
 	<?php endif; ?>
@@ -93,9 +93,6 @@
 		
 	</ul> 
 
-	<div class="PageLinks">
-	<p><?=$showing_string;?></p>
-	</div>
 	<?php if ($page_links):?>
 	<div class="PageLinks">
 		<?=$page_links;?>
