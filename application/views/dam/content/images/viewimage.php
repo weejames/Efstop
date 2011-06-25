@@ -120,14 +120,12 @@
 <?php if ($image->orientation == 'P') $imagewidth = ($image->width / $image->height) * 700; else $imagewidth = 700;?>
 <div id="imageHolder" class="clearfix" style="width: <?=$imagewidth;?>px">
 	
-	<?=form_open($package.'/image/addToLightbox/'.$image->id.'/'.$location, array('class' => 'lightboxselect', 'id' => 'lightboxselect0'));?>
 	<ul>
 		<li class="image" style="min-height: 200px">
 			<img src="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 700, 700, true);?>" />
 			<p class="uploader">Uploaded by <?=$image->creator;?></p>
 		</li>
-	</ul>		
-	<?=form_close();?>
+	</ul>
 	
 	<div id="Comments">	
 		<h3>Add Comment</h3>

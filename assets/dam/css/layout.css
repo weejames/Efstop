@@ -50,7 +50,6 @@ input.button	{ }
 
 input.add2Lb, input.delFromLb {
     display: block;
-    margin-top: 5px;
 }
 
 /* Horizontal Rules */
@@ -167,8 +166,8 @@ div#RecentUploads ul li			{ float: left; display: block; padding: 0.75em 0.75em 
 div#ImageSets		{ clear: both; }
 div#ImageSets h2	{ }
 
-ul.ImageSet li			{ float: left; display: block; margin: 0 0.75em 0.75em 0; }
-ul.ImageSet li img { margin: 0 auto; }
+ul.ImageSet li		{ position: relative; float: left; display: block; margin: 0 0.75em 0.75em 0; }
+ul.ImageSet li img	{ margin: 0 auto; }
 
 ul.Lightbox			{ width: 70em; }
 ul.Lightbox li		{ float: left; display: block; margin: 0 0.75em 0.75em 0; }
@@ -276,8 +275,15 @@ div#Comments ol li blockquote span	{ font-size: 1.2em;  }
 form.addkeywords input {
     margin-top: 0.5em;
 }
-form.lightboxselect input {
-    margin-top: 0.2em;
+
+form.lightboxselect {
+display: none; }
+
+.ImageSet li:hover form.lightboxselect {
+position: absolute;
+display: block;
+top: 0;
+left: 0
 }
 
 ul.swatches {
