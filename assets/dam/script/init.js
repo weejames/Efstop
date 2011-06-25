@@ -1,5 +1,27 @@
 $(document).ready (
 	function() {
+		
+		$('#LightboxSharingModal').dialog({
+			modal: true,
+			autoOpen: false,
+			minWidth:500
+		});
+		$('.OpenLightboxSharing').click( function(e) {
+			e.preventDefault();
+			$('#LightboxSharingModal').dialog('open');
+		});
+		
+		$('#LightboxAccessModal').dialog({
+			modal: true,
+			autoOpen: false,
+			minWidth:500
+		});
+		$('.OpenLightboxAccess').click( function(e) {
+			e.preventDefault();
+			$('#LightboxAccessModal').dialog('open');
+		});
+		
+	
 	 	$('ul#Navotron li span').click( function() {
 	 		if ( $(this).next('div.tagpicker').is(':visible') ) {
 	 			$(this).next('div.tagpicker').hide();

@@ -7,6 +7,10 @@
 	<script type="text/javascript" charset="utf-8">
 		sessionID = '<?=$this->db_session->sessionid();?>';
 	</script>
+	
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.js"></script>
 	<?=script($page_js);?>
 </head>
 <body>
@@ -48,4 +52,4 @@
 
 <div class="Wrapper">
 
-	<div id="ContentContainer">
+	<div id="ContentContainer" class="clearfix">

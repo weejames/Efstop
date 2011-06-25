@@ -1,59 +1,101 @@
-<?php if ($setAccess):?>
-<div id="AccessControls" class="clearfix" name="accesscontrols">
+<div id="MainContent">
+	<h2>Lightbox: <?=$lightbox->boxtitle;?></h2>
 
-		<h2>Lightbox Controls</h2>
+	<input type="hidden" name="lightboxid" id="lightboxid" class="lightboxid" value="<?=$lightbox->id;?>" />
 
-		<?php if ($setAccess):?>   
-	    <a href="#" class="renamebox">Rename</a> <a href="<?=site_url($package.'/lightbox/delete/'.$lightbox->id);?>" class="deleteLink">Delete</a>
+	<?php if ($images):?>
+	<ul class="Lightbox clearfix">
+	<?php foreach($images as $image):?>
+		<li>
+			<?php if ($fullImageView):?>
+			<a href="<?=site_url($package.'/image/viewImage/'.$image->id.'/fromLightbox'.$lightbox->id);?>" class="thumb" title="<?=$image->title."\r\n\r\n".$image->description;?>"><img src="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 1000, 160, true);?>" /></a>
+			<?php else:?>
+
+			<?php endif;?>
+
+			<?php if($modifyLightbox):?>
+			
+			<?=form_open($package.'/lightbox/removeFromLightbox/'.$lightbox->id, array('class' => 'lightboxselect' ));?>
+			<input class="delFromLb button" type="submit" name="submit" value="Remove" />
+			<input type="hidden" name="lightboxid" value="<?=$lightbox->id;?>" />
+			<input type="hidden" name="imageid" value="<?=$image->id;?>" />
+			<?=form_close();?>
+			<?php endif;?>
+		</li>
+	<?php endforeach;?>
+	</ul>
+
+	<?php else:?>
+	<p class="notice">There are currentlly no images in this lightbox.</p>
+	<?php endif;?>
+</div>
+
+<div id="Sidebar">
+	<div id="LightboxOptions">
+		<h3>Lightbox Options</h3>
+
+		<?php if ($setAccess):?>
+		<p><a href="" class="OpenLightboxSharing">Share this Lightbox</a></p>
+		<?php if($currentAccess):?>
+		<p><a href="" class="OpenLightboxAccess">Change Sharing Permissions</a></p>
 		<?php endif;?>
+		<p><a href="#" class="renamebox">Rename this Lightbox</a></p>
+		<p><a href="<?=site_url($package.'/lightbox/delete/'.$lightbox->id);?>" class="deleteLink">Delete this Lightbox</a></p>
+		<?php endif;?>
+	</div>
+<div>
 
 
-    <a name="accesscontrols"></a>   
-    <h2>Access Controls</h2>
+<?php if ($setAccess):?>
+<div style="display: none" id="LightboxSharingModal" title="Share this Lightbox">
+	
     <?=form_open($package.'/lightbox/setAccess/'.$lightbox->id, array('id' => 'accessControl'));?>
     
-    <fieldset class="accessControls">
-        <legend>Set Access Permissions</legend>
-        <dl>
-            <dt><p>Who do you want to provide access to?</p></dt>
-            <dd><label><input type="radio" value="group" name="whoto" id="whoto_group" checked="checked" class="checkbox" /> A Group</label><br />
-           		<div class="group">
-					<select id="groups" name="groups">
-						<option value="">None</option>
-						<?php foreach ($groupslist as $group):?>
-							<option value="<?=$group->id;?>"> <?=$group->grouptitle;?></option>
-						<?php endforeach;?>
-					</select>
-                </div>
-	            <label><input type="radio" value="user" name="whoto" id="whoto_user" class="checkbox" /> A User</label><br />
-	            <div class="user">
-					<select id="user" name="user">
-						<?php foreach ($userslist as $user):?>
-							<option value="<?=$user->id;?>"><?=$user->firstname;?> <?=$user->lastname;?></option>
-						<?php endforeach;?>
-					</select>
-                </div>
-	            <label><input type="radio" value="guest" name="whoto" id="whoto_guest" class="checkbox" /> A Guest</label>
-				<div class="guest">
-					<input type="text" name="emailaddress" value="" id="emailaddress" title="Enter guest email address..." /> 
-                </div>
-            </dd>
-            
-            <fieldset class="accessControls">
-                <legend>Access Type</legend>
-                    <label><input type="radio" value="read" name="access" id="access_read" checked="checked" class="checkbox" />Read Only</label>
-                    <label><input type="radio" value="full" name="access" id="access_full" class="checkbox" />Full</label>
-            </fieldset>
-            
-            <dt>&nbsp;</dt>
-            <dd><input type="submit" class="submit button" value="Set Access" /></dd>
-        </dl>
+    <fieldset>
+
+		<p>Who do you want to share this Lightbox with?</p>
+        
+		<label><input type="radio" value="group" name="whoto" id="whoto_group" checked="checked" class="checkbox" /> A Group</label>
+		
+	    <label><input type="radio" value="user" name="whoto" id="whoto_user" class="checkbox" /> A User</label>
+		
+		<label><input type="radio" value="guest" name="whoto" id="whoto_guest" class="checkbox" /> A Guest</label>
+		
+		<div class="group">
+			<select id="groups" name="groups">
+				<option value="">None</option>
+				<?php foreach ($groupslist as $group):?>
+					<option value="<?=$group->id;?>"> <?=$group->grouptitle;?></option>
+				<?php endforeach;?>
+			</select>
+		</div>
+		
+		<div class="user">
+			<select id="user" name="user">
+				<?php foreach ($userslist as $user):?>
+					<option value="<?=$user->id;?>"><?=$user->firstname;?> <?=$user->lastname;?></option>
+				<?php endforeach;?>
+			</select>
+		</div>
+		
+		<div class="guest">
+			<input type="text" name="emailaddress" value="" id="emailaddress" title="Enter guest email address..." /> 
+		</div>
+
+		<p>What should they be allowed to do?</p>
+		<label><input type="radio" value="read" name="access" id="access_read" checked="checked" class="checkbox" />View and download Lightbox images only</label><br />
+		<label><input type="radio" value="full" name="access" id="access_full" class="checkbox" />Add and remove images from the Lightbox</label>
+				
+		<input type="submit" class="submit button" value="Set Access" />
+
     </fieldset>
     <?=form_close();?>
+</div>
+<?php endif;?>
 
-    <?php if($currentAccess):?>
-    <h4>Current Access</h4>
-    <p>The following users currently have access to this lightbox.</p>
+<?php if($currentAccess):?>
+<div style="display: none" id="LightboxAccessModal" title="Current Lightbox Access">
+    <p>This Light is currently being shared with:</p>
     
 	<table>
 	
@@ -66,7 +108,7 @@
         
         <tbody>
         
-	<?php foreach($currentAccess as $row => $user):?>
+		<?php foreach($currentAccess as $row => $user):?>
 		<tr>
 			<td><?php if ($user->usersid):?><?=$user->firstname;?> <?=$user->lastname;?><?php elseif(strlen($user->grouptitle)):?><?=$user->grouptitle;?><?php elseif(strlen($user->emailaddress)):?><span title="<?=$user->emailaddress;?>">Guest</span><?php endif;?></td>
 			<td><?=date('d/m/Y', strtotime($user->datecreated));?></td>
@@ -78,55 +120,11 @@
                 <?=form_close();?>
             </td>
 		</tr>
-	<?php endforeach;?>
+		<?php endforeach;?>
         </tbody>
         
 	</table>
-	
 	<?php endif;?>
 </div>
-<?php endif;?>
 
-
-
-	
-<h2><?=$lightbox->boxtitle;?></h2>
-
-<input type="hidden" name="lightboxid" id="lightboxid" class="lightboxid" value="<?=$lightbox->id;?>" />
-
-<?php if ($images):?>
-<ul class="Lightbox clearfix">
-<?php foreach($images as $image):?>
-	<li>
-		<?php if ($fullImageView):?>
-		<a href="<?=site_url($package.'/image/viewImage/'.$image->id.'/fromLightbox'.$lightbox->id);?>" class="thumb" title="<?=$image->title."\r\n\r\n".$image->description;?>"><img src="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 1000, 160, true);?>" /></a>
-		<?php else:?>
-		
-		<?php /*
-		<span class="ImageCode"><?=$image->imagecode;?></span>
-		<a class="thumb" style="background-image: url('<?=base_url().'image_store/thumbs/'.$image->thumbname;?>')"></a>
-
-		<a class="standardLink" href="<?=base_url().'image_store/preview/'.$image->previewname;?>">Download Low Res</a>
-		<br /><a class="standardLink" href="<?=base_url().'image_store/'.$image->previewname;?>">Download High Res</a>
-		*/ ?>
-
-		<?php endif;?>
-
-		<?php if($modifyLightbox):?>
-
-		<?=form_open($package.'/lightbox/removeFromLightbox/'.$lightbox->id);?>
-		<input class="delFromLb button" type="submit" name="submit" value="Remove" />
-		<input type="hidden" name="lightboxid" value="<?=$lightbox->id;?>" />
-		<input type="hidden" name="imageid" value="<?=$image->id;?>" />
-		<?=form_close();?>
-		<?php endif;?>
-	</li>
-<?php endforeach;?>
-</ul>
-
-<?php else:?>
-<p class="notice">There are currentlly no images in this lightbox.</p>
-<?php endif;?>
-
-
-
+</div>

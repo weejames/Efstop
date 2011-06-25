@@ -17,7 +17,7 @@ class DAM extends Admin {
 		
 		$this->view_data['page_title'] = 'efstop';
 		$this->view_data['page_css'] = array('reset-min', 'autocomplete', 'layout', array('ie6' => 'ie6'), array('ie7' => 'ie7'));
-		$this->view_data['page_js'] = array('jquery-1.2.6.pack', 'jquery.media.flash', 'jquery.autocomplete-1.4.1','init');
+		$this->view_data['page_js'] = array('jquery.media.flash', 'jquery.autocomplete-1.4.1','init');
 		
 		$this->load->model('imagemodel');
 		$this->view_data['systemTags'] = $this->imagemodel->getTagList($this->authentication->getAccountId());
