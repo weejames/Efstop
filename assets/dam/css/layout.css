@@ -1,25 +1,18 @@
-/*	
-	TYPE and COLOUR
-*/
 body { background-color: #fff; font-size: 10px; font-family: Verdana, Arial, sans-serif; line-height: 1.5; font-style: normal; }
 
-
-/* FONT COLOURS */
 h2,
 h3,
 h4,
 legend,
-label		{ color: #3f3f3f; font-weight: bold; }
-
-input			{ color: #3f3f3f; background-color: #fafafa; font-size: 11px; }
-input.button	{ background-color: #40833c; color: white; border-style: outset; border-width: 2px; }
-
+label	{ font-weight: bold; }
 em		{ font-style: italic; }
+strong	{ font-weight: bold; }
 
 /* FONT SIZES */
+
 h2          { font-size: 1.6em; margin: 0 0 0.25em 0; }
 h2 small    { font-size: 0.7em; }
-h2 a, label a{ font-size: 0.7em; margin: 0 3px 0 3px; }
+
 h3          { font-size: 1.4em; }
 h3 small    { font-size: 0.7em; }
 h4          { font-size: 1.3em; }
@@ -30,45 +23,41 @@ div.boxWithPadding p { line-height: 1.2; font-style: normal; }
 
 div#Footer p { font-size: 1.0em; color: silver;}
 
-label       { font-size: 1em;}
+label       { font-size: 1em; }
+input       { padding: 1px; }
 
-input       {padding: 1px;}
 div#SavedSearches h2 { font-size: 1.3em;}
 .red { color: red;}
 
 p.uploaded { font-size: 1.8em; }
 
-strong { font-weight: bold;}
+/* Colour */
 
-/* LINK COLOURS */
+input.button	{ background-color: #40833c; color: white; }
 
-a { color: #4b9ba5; text-decoration: none; outline:none; border: none; }
-a:hover { color: red; }
+/* Links */
 
-div.ClientName a {
-    text-decoration: underline;
-    color: #838383;
-}
-div.ClientName a:hover {
-    color: #8e1400;
-}
+a			{ color: #4b9ba5; text-decoration: none; border:none }
+a:focus		{ outline:1px dotted invert; }
+a:hover		{ text-decoration: underline; }
+a:active	{ position:relative; top: 1px }
 
-div#Lightboxes ul li a,
-li.ImageSetsContainer li a,
-ul.ImageSet li a.red
-{
-	color: #8e1400; 			
-	font-size: 1.2em;
-	font-weight: bold;
-}
 a.deleteLink { color: #8e1400; }
+
+/* Buttons */
+
+input.button	{ }
+
+input.add2Lb, input.delFromLb {
+    display: block;
+    margin-top: 5px;
+}
 
 /* Horizontal Rules */
 
 hr { height: 1px; background-color: #838383; margin-right: 5px; border: none; }
-div#Lightboxes hr { margin-right: 0; }
 
-/* FORM COLOURS and Layout */
+/* Forms */
 
 fieldset.accessControls input#emailaddress { width:230px;}
 
@@ -77,6 +66,8 @@ textarea#description,
 textarea#keywords
  {height: 80px;width: 210px;}
 
+ 
+ 
 .box {
 	background-color: #fafafa;
 	border: 1px solid silver;
@@ -89,49 +80,44 @@ input, textarea, select {
     border: 1px solid #bdbdbd;
 }
 
-
-
 div.upload,
 fieldset.RenameImageSet {
 	background-color: #fafafa;
 	border: 1px solid silver;
 	margin-bottom: 10px;
 }
-input.add2Lb, input.delFromLb {
-    font-size: 11px;
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    margin-top: 5px;
-}
-
-/* Random icons and junk */
 
 
 /*	LAYOUT  */
 
-div#SuperHeaderWrapper		{ border-bottom: 0.1em solid silver; background-color: #fafafa; height: 6em; }
-div#SuperHeader 			{ width: 97.6em; margin: 0 auto; height: 2em; line-height: 2em; }
-div#SuperHeader p			{ font-size: 1em; text-align: right; color: #3f3f3f; }
+#SuperHeaderWrapper		{ border-bottom: 0.1em solid silver; background-color: #fafafa; height: 6em; }
+#SuperHeader 			{ width: 97.6em; margin: 0 auto; height: 2em; line-height: 2em; }
+#SuperHeader p			{ font-size: 1em; text-align: right; color: #3f3f3f; }
 
-div#SuperHeader h1 a { display: block; float: left; margin: 0.3em 0em 0em 2em; width: 10em; height: 5em; background-image: url(BASEURLassets/dam/images/logo.png); background-repeat: no-repeat; text-indent: -999em; }
+#SuperHeader h1 a { display: block; float: left; margin: 0.4em 0 0 -2.2em; width: 9em; height: 5em; background: url(BASEURLassets/dam/images/logo.png) no-repeat; text-indent: -999em; }
 
-div#SuperHeader form.Search { float: right; margin-top: 0.5em; }
-div#SuperHeader div.UserOptions { float: right; width: 40em; }
+#SuperHeader .UserOptions { float: right; width: 40em; margin: 0.2em 0 1.1em 0; }
+#SuperHeader form.Search { float: right; }
 
-div.Wrapper		{ width: 97.6em; position: relative; margin: 0px auto; }
+#TopNav { float: left; clear: right; }
+#TopNav li { display: inline; float: left; padding: 0 2em 0 0; }
+#TopNav li.last { padding: 0; }
+#TopNav li a { font-size: 1.6em; }
 
+.Wrapper		{ width: 97.6em; position: relative; margin: 0px auto; }
 
-ul#TopNav { float: left; clear: right; }
-ul#TopNav li { display: inline; float: left; padding: 0 15px 0 0; }
-ul#TopNav li.last { padding: 0; }
-ul#TopNav li a { font-size: 1.6em; }
+#ContentContainer { margin-top: 1em; clear: both; }
 
-div#ContentContainer { margin-top: 1em; clear: both; }
+#MessageArea p		{ position: absolute; top: 1.8em; left: 50em; color: #FFF; font-weight: bold; padding: 0 1em; }
+p.notification          { background-color: #a3bb5d; }
+p.notification-error    { background-color: #b56457; }
 
-div#MessageArea p                       { position: absolute; top: 1.8em; left: 50em; color: #FFF; font-weight: bold; padding: 0 1em; }
-div#MessageArea p.notification          { background-color: #a3bb5d; }
-div#MessageArea p.notification-error    { background-color: #b56457; }
+p.notification-error {
+	padding: 5px;
+	border-top: 1px solid red;
+	border-bottom: 1px solid red;
+	background-color: #F6B9B9;
+}
 
 div.notify				{ background-color: #FFE157; padding: 10px; border: 4px dashed #FED000; margin-bottom: 10px; padding-bottom: 20px; }
 div.notify p a.dismiss	{ float: right; font-size: 0.8em; font-weight: bold; }
@@ -162,41 +148,31 @@ ul.tags li a 	{ padding: 0 0 0 0; margin: 0 1em 0 0; }
 div#Lightboxes { float: left; width: 52em; }
 
 div#Lightboxes ul { }
-div#Lightboxes ul li { display: block; float: left; width: 52em; margin: 0; padding: 0.5em 0 0 0; border-top: 1px solid #ccc; }
-div#Lightboxes ul li a.red		{ }
-div#Lightboxes ul li a.thumb	{ display: block; clear: right; float: left; position: relative; height: 100px; width: 100px; margin: 0.75em 1.8em 1em 0; }
-div#Lightboxes small		{ display: block; float: right; color: #888; }
-div#Lightboxes h2 small		{ display: inline; }
+div#Lightboxes ul li { display: block; float: left; width: 52em; margin-bottom: 1em }
+
+div#Lightboxes ul li a.thumb	{ display: block; clear: right; float: left; position: relative; height: 100px; margin: 0 0.75em 0.75em 0; }
 
 div#Lightboxes.all ul.container			{ width: 97.6em; }
-div#Lightboxes.all ul li.Lightbox	{ width: 45em; margin: 0 1.5em 2em 0; display: block; float: left; border: 1px solid #fff; padding: 1em; }
-div#Lightboxes.all ul li small	{ font-size: 1.1em; }
-div#Lightboxes.all ul li a		{ color: #8e1400; font-size: 1.2em; font-weight: bold; }
-div#Lightboxes.all ul li li		{ width: 140px; display: block; float: left; border: none; padding: 0 0 0 0; margin: 0 0 0 1em; }
-div#Lightboxes.all ul li li a	{ }
-div#Lightboxes.all ul li li a.thumb	{ height: auto; padding: 0 0 0 0; margin: 0 0 0 0; }
-div#Lightboxes.all ul li ul		{ width: ; }
+div#Lightboxes.all ul li.Lightbox	{ width: 47em; margin: 0 1.75em 2em 0; display: block; float: left; }
+
+div#Lightboxes.all ul li li		{ display:block; float: left; width: auto; }
+div#Lightboxes.all ul li li img	{ display: block; float: left; margin: 0 0.75em 0.75em 0; }
+
 
 div#RecentUploads		{ float: right; width: 41em; border-left: 0.1em solid #ccc; padding-left: 2em; }
 
 div#RecentUploads ul			{ padding: 0 0 0 0; }
-div#RecentUploads ul li			{ float: left; padding: 0 1.5em 1.5em 0; }
-div#RecentUploads ul li a		{ display: block; width:120px; height:120px; text-indent: -9999px; background-repeat: no-repeat; background-position: center center; }
-div#RecentUploads ul li a:hover { border-color: #4B9BA5; }
+div#RecentUploads ul li			{ float: left; display: block; padding: 0.75em 0.75em 0 0; }
 
-div#ImageSets		{ margin-top: 2em; clear: both; }
+div#ImageSets		{ clear: both; }
 div#ImageSets h2	{ }
 
-
-
-
-ul.ImageSet				{ margin-top: 1.5em; }
-ul.ImageSet li			{ float: left; display: block; width: 16em; min-height: 25em; margin: 0 3em 0 0; }
-ul.ImageSet li small	{ position: relative; }
-ul.ImageSet li a.thumb img { margin: 0 auto; }
+ul.ImageSet li			{ float: left; display: block; margin: 0 0.75em 0.75em 0; }
+ul.ImageSet li img { margin: 0 auto; }
 
 ul.Lightbox			{ width: 70em; }
-ul.Lightbox li		{ float: left; display: block; width: 14em; min-height: 25em; margin: 0 3em 0 0; }
+ul.Lightbox li		{ float: left; display: block; margin: 0 0.75em 0.75em 0; }
+
 
 div#AccessControls			{ float: right; width: 22em; }
 div#AccessControls table	{ font-size: 0.9em; margin-top: 10px; }
@@ -233,19 +209,6 @@ th.checkbox-grid,
 th.sortby { width: 25px; }
 th.datefield-grid {  }
 
-
-
-
-div.noimages {
-	background-image: url('BASEURLassets/dam/images/noimages.jpg');
-	width: 396px;
-	height: 490px;
-}
-div.nolightboxes {
-	background-image: url('BASEURLassets/dam/images/nolightboxes.jpg');
-	width: 527px;
-	height: 432px;
-}
 
 li.deletelink {padding-top: 5px;}
 
@@ -298,10 +261,10 @@ div#Comments ol li blockquote cite	{ display: block; text-align: right; font-sty
 div#Comments ol li blockquote span	{ font-size: 1.2em;  }
 
 form.addkeywords input {
-    margin-top: 5px;
+    margin-top: 0.5em;
 }
 form.lightboxselect input {
-    margin-top: 10px;
+    margin-top: 0.2em;
 }
 
 ul.swatches {
@@ -626,82 +589,52 @@ p.gravatar img {
 	margin: 0 4px;
 }
 
-/*----- FOOTER -----*/
-div#Footer {
-    padding-top: 20px;
-    clear: both;
-}
+/*  Footer */
 
+#Footer { padding-top: 20px; clear: both; text-align: center; }
 
 
 /* Login */
 
-form.loginform fieldset {
+.loginform fieldset {
 	width: 335px;
-	padding: 180px 0 0 82px;
+	padding: 140px 0 0 82px;
 	margin: 50px auto 0 auto;
-	border: none;
-	background: url(BASEURLassets/dam/images/loginLogo.png) no-repeat 10px 32px;
+	background: url(BASEURLassets/dam/images/loginLogo.png) no-repeat;
 }
-form.loginform label {
-	margin-top: 9px;
-}
-form.loginform label,
-form.loginform input {
+
+.loginform label,
+.loginform input {
 	display: block;
 }
 
-
-
-form.loginform input {
-	width: 239px;
-	display: block;
-	font-size:1.3em;
+.loginform label {
+	margin: 10px 0 10px 0;
+}
+.loginform input {
 	padding: 3px;
 }
-form.loginform input#openid_identifier { padding-left: 22px; background: url(BASEURLassets/dam/images/openid_small_logo.png) no-repeat 3px 3px; width: 220px; }
-form.loginform input#emailaddress { padding-left: 22px; background: url(BASEURLassets/dam/images/user_go.png) no-repeat 3px 3px; width: 220px; }
-form.loginform input#password { padding-left: 22px; background: url(BASEURLassets/dam/images/key.png) no-repeat 3px 3px; width: 220px; }
 
-form.loginform input.button {
-	width: 250px;
-	background-color: #40833C;
-	margin-top: 10px;
-	color: white;
-}
-form.loginform p {
-	margin-top: 3px;
-}
-div#footer p {
-	text-align: center;
-}
+.loginform input#emailaddress { padding-left: 22px; background: url(BASEURLassets/dam/images/user_go.png) no-repeat 3px 3px; width: 220px; }
+.loginform input#password { padding-left: 22px; background: url(BASEURLassets/dam/images/key.png) no-repeat 3px 3px; width: 220px; }
 
 
-p.notification-error {
-	padding: 5px;
-	border-top: 1px solid red;
-	border-bottom: 1px solid red;
-	background-color: #F6B9B9;
-}
 
-
+/* Hacks */
 .clearfix:after {  
     content: ".";  
     display: block;  
     clear: both;  
     visibility: hidden;  
-    line-height: 0px;  
-    height: 0;
-}  
-   
+    line-height: 0;  
+    height: 0;  
+}   
 .clearfix {  
     display: inline-block;  
-}  
-   
+}   
 html[xmlns] .clearfix {  
     display: block;  
 }  
-   
 * html .clearfix {  
     height: 1%;  
 }

@@ -182,6 +182,7 @@ class AssetManager extends Controller {
 			header($ExpStr);
 	
 			readfile($finalpath);
+
 		} else {
 			//show_404();
 		}

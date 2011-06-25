@@ -1,5 +1,13 @@
-<?php if ($setAccess):?>    
+<?php if ($setAccess):?>
 <div id="AccessControls" class="clearfix" name="accesscontrols">
+
+		<h2>Lightbox Controls</h2>
+
+		<?php if ($setAccess):?>   
+	    <a href="#" class="renamebox">Rename</a> <a href="<?=site_url($package.'/lightbox/delete/'.$lightbox->id);?>" class="deleteLink">Delete</a>
+		<?php endif;?>
+
+
     <a name="accesscontrols"></a>   
     <h2>Access Controls</h2>
     <?=form_open($package.'/lightbox/setAccess/'.$lightbox->id, array('id' => 'accessControl'));?>
@@ -80,45 +88,45 @@
 <?php endif;?>
 
 
-<ul class="Lightbox clearfix">
+
 	
-    <h2 class="indent" id="currentBoxTitle">Lightbox &ndash; <span class="title"><?=$lightbox->boxtitle;?></span> 
-	    <?php if ($setAccess):?>   
-	    <a href="#" class="renamebox">Rename</a> <a href="<?=site_url($package.'/lightbox/delete/'.$lightbox->id);?>" class="deleteLink">Delete</a>
+<h2><?=$lightbox->boxtitle;?></h2>
+
+<input type="hidden" name="lightboxid" id="lightboxid" class="lightboxid" value="<?=$lightbox->id;?>" />
+
+<?php if ($images):?>
+<ul class="Lightbox clearfix">
+<?php foreach($images as $image):?>
+	<li>
+		<?php if ($fullImageView):?>
+		<a href="<?=site_url($package.'/image/viewImage/'.$image->id.'/fromLightbox'.$lightbox->id);?>" class="thumb" title="<?=$image->title."\r\n\r\n".$image->description;?>"><img src="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 1000, 160, true);?>" /></a>
+		<?php else:?>
+		
+		<?php /*
+		<span class="ImageCode"><?=$image->imagecode;?></span>
+		<a class="thumb" style="background-image: url('<?=base_url().'image_store/thumbs/'.$image->thumbname;?>')"></a>
+
+		<a class="standardLink" href="<?=base_url().'image_store/preview/'.$image->previewname;?>">Download Low Res</a>
+		<br /><a class="standardLink" href="<?=base_url().'image_store/'.$image->previewname;?>">Download High Res</a>
+		*/ ?>
+
 		<?php endif;?>
-	</h2>
 
-	<input type="hidden" name="lightboxid" id="lightboxid" class="lightboxid" value="<?=$lightbox->id;?>" />
-    
-    <?php if ($images):?>
-    <?php foreach($images as $image):?>
-    <li>
-        <?php if ($fullImageView):?>
-        <?php /*<a href="<?=site_url($package.'/image/viewImage/'.$image->id.'/fromLightbox'.$lightbox->id);?>"><?=$image->title;?></a>*/ ?>
-        <a href="<?=site_url($package.'/image/viewImage/'.$image->id.'/fromLightbox'.$lightbox->id);?>" class="thumb" title="<?=$image->title."\r\n\r\n".$image->description;?>"><img src="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 160, 160, true);?>" /></a>
-        <?php else:?>
-        <span class="ImageCode"><?=$image->imagecode;?></span>
-        <a class="thumb" style="background-image: url('<?=base_url().'image_store/thumbs/'.$image->thumbname;?>')"></a>
+		<?php if($modifyLightbox):?>
 
-        <a class="standardLink" href="<?=base_url().'image_store/preview/'.$image->previewname;?>">Download Low Res</a>
-        <br /><a class="standardLink" href="<?=base_url().'image_store/'.$image->previewname;?>">Download High Res</a>
-
-    <?php endif;?>
-    
-    <?php if($modifyLightbox):?>
-    
-    <?=form_open($package.'/lightbox/removeFromLightbox/'.$lightbox->id);?>
-        <input class="delFromLb button" type="submit" name="submit" value="Remove from Lightbox" />
-        <input type="hidden" name="lightboxid" value="<?=$lightbox->id;?>" />
-        <input type="hidden" name="imageid" value="<?=$image->id;?>" />
-    <?=form_close();?>
-    <?php endif;?>
-    </li>
-    <?php endforeach;?>
-
-    <?php else:?>
-<p class="notice">There are currentlly no images in this lightbox.</p>
-    <?php endif;?>
+		<?=form_open($package.'/lightbox/removeFromLightbox/'.$lightbox->id);?>
+		<input class="delFromLb button" type="submit" name="submit" value="Remove" />
+		<input type="hidden" name="lightboxid" value="<?=$lightbox->id;?>" />
+		<input type="hidden" name="imageid" value="<?=$image->id;?>" />
+		<?=form_close();?>
+		<?php endif;?>
+	</li>
+<?php endforeach;?>
 </ul>
 
-    
+<?php else:?>
+<p class="notice">There are currentlly no images in this lightbox.</p>
+<?php endif;?>
+
+
+

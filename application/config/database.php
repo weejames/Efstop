@@ -34,9 +34,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = "pqubte01";
-$db['default']['username'] = "remote";
-$db['default']['password'] = "r3m0t34cc3ss";
+$db['default']['hostname'] = "localhost";
+$db['default']['username'] = "root";
+$db['default']['password'] = "139913";
 $db['default']['database'] = "efstop";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";

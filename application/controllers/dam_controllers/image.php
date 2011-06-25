@@ -7,7 +7,7 @@ class Image extends DAM {
 	protected $package = 'dam_controllers';
 	protected $current_module = 'Upload Images';
 	private $s3bucket = ''; // TODO: make a config setting
-	private $local_image_path = '/var/www/phpapps/efstop/image_store/'; // TODO: make a config setting
+	private $local_image_path = '/var/www/efstop/image_store/'; // TODO: make a config setting
 	
 	public function Image() {
 		$login = 1;
@@ -181,7 +181,7 @@ class Image extends DAM {
 				$uploadData = $this->upload->data();
 				
 				$image_data->filename 	= $uploadData['file_name'];
-				$image_data->title 		= $uploadData['orig_name'];
+				$image_data->title	= $uploadData['orig_name'];
 				$image_data->filesize 	= $uploadData['file_size'];
 				
 				//check if we're uploading a psd
@@ -247,14 +247,14 @@ class Image extends DAM {
 				else if ($image_data->height > $image_data->width) $image_data->orientation = 'P';
 				else $image_data->orientation = 'S';
 				
-				$colourExtract = $this->imagecolorextract->getColors($this->local_image_path.'1500s/'.$image_data->previewname);
+				//$colourExtract = $this->imagecolorextract->getColors($this->local_image_path.'1500s/'.$image_data->previewname);
 				
 				if (!$flashupload) $image_data->accountid = $this->authentication->getAccountId();
 				else $image_data->accountid = $userdata['accountid'];
 				
 				$newimageid = $this->imagemodel->add($image_data);
 				
-				$loopcount = 0;
+				/* $loopcount = 0;
 				foreach ($colourExtract as $colour => $count) {
 					$colorid = $this->imagemodel->getColourId($colour);
 					
@@ -262,7 +262,7 @@ class Image extends DAM {
 					
 					$loopcount ++;
 					if ($loopcount >= 10) break;
-				}
+				} */
 				
 				$this->db_session->set_flashdata('newid', $newimageid);
 				

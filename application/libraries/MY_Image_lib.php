@@ -20,12 +20,12 @@ class MY_Image_lib extends CI_Image_lib {
 			return FALSE;
 		}
 				
-		if ( ! eregi("convert$", $this->library_path))
+		/*if ( ! eregi("convert$", $this->library_path))
 		{
 			if ( ! eregi("/$", $this->library_path)) $this->library_path .= "/";
 		
 			$this->library_path .= 'convert';
-		}
+		} */
 		
 		// Execute the command
 		$cmd = $this->library_path." -quality ".$this->quality;

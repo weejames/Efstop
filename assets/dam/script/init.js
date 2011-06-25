@@ -62,8 +62,8 @@ $(document).ready (
 								}
 							},
 							{ version: '9.0.47',
-							  expressInstall: true });
-		$('div#upload ol li:eq(2)').hide();*/
+							  expressInstall: true });*/
+		$('div#upload ol li:eq(2)').hide(); 
 		
 		
 		$('.deleteLink').confirmDelete();
@@ -617,7 +617,7 @@ $.fn.setLightboxHandler = function () {
 	
 	$(lightboxTarget).prepend('<h2 id="lightboxHeader">Current Lightbox</h2>');
 	
-	$(lightboxTarget).append('<a href="#" class="createLightbox">Add New</a>');
+	$(lightboxTarget).append('<a href="#" class="createLightbox">Add New Lightbox</a>');
 	
 	$(lightboxTarget).append('<div><ul></ul></div>');
 	

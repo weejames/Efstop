@@ -41,10 +41,10 @@
     <h3>Options</h3>
     <ul class="optionlist">
 
-    <?php if ($changeDetails):?>
+		<?php if ($changeDetails):?>
         <li><a href="<?=site_url($package.'/image/set_properties/'.$image->id);?>">Change Image Details</a></li>
         <li class="deletelink"><a href="<?=site_url($package.'/image/delete/'.$image->id.'/'.$location);?>" class="red deleteLink">Delete This Image</a></li>
-    <?php endif;?>
+		<?php endif;?>
     </ul>
 
     <div class="tagsContainer"> 
@@ -61,9 +61,9 @@
     <?php if ($colours):?>
     <h3>Image Colours</h3>
     <ul class="swatches">
-    <?php foreach($colours as $colour):?>
+		<?php foreach($colours as $colour):?>
         <li style="background-color: #<?=$colour->colorcode;?>;">#<?=$colour->colorcode;?></li>
-    <?php endforeach;?>
+		<?php endforeach;?>
     </ul>
     <a class="swatch" href="<?=site_url('dam_controllers/image/downloadPalette/'.$image->id);?>">Download Adobe Palette</a>
     <?php endif;?>
@@ -77,48 +77,42 @@
 		<li class="actions">
 			<p>
 				<input type="hidden" name="imageid" value="<?=$image->id;?>" class="imageid" />
-			    <input style="" class="" type="submit" name="submit" value="Add To Lightbox" />
+			    <input class="" type="submit" name="submit" value="Add To Current Lightbox" />
 
-				Download:
+				Download Image:
 				<a title="Max. Dimension 1000px" href="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 1000, 1000, true);?>">Medium</a>
 				<a title="Max. Dimension 1500px" href="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 1500, 1500, true);?>">Large</a>
 				<a title="<?=$image->width;?>px * <?=$image->height;?>px" href="<?=site_url($package.'/image/download/full/'.$image->id);?>">Original</a>
 			</p>
 		</li>
-		<li class="image" "width: min-height: 200px"><img src="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 700, 700, true);?>" /><p class="uploader">Uploaded by <?=$image->creator;?></p></li>
-		<li class="actions">
-			<p>
-				<input type="hidden" name="imageid" value="<?=$image->id;?>" class="imageid" />
-			    <input style="" class="" type="submit" name="submit" value="Add To Lightbox" />
-				
-				Download: 
-				<a title="Max. Dimension 1000px" href="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 1000, 1000, true);?>">Medium</a>
-				<a title="Max. Dimension 1500px" href="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 1500, 1500, true);?>">Large</a>
-				<a title="<?=$image->width;?>px * <?=$image->height;?>px" href="<?=site_url($package.'/image/download/full/'.$image->id);?>">Original</a>
-			</p>
+		<li class="image" "width: min-height: 200px">
+			<img src="<?=resizedImageURL('image_store/1500s/'.$image->previewname, 700, 700, true);?>" />
+			<p class="uploader">Uploaded by <?=$image->creator;?></p>
 		</li>
 	</ul>		
 	<?=form_close();?>
 	
 	<div id="Comments">	
-	<h3>Add Comment</h3>
-	<?=form_open('dam_controllers/image/comment/'.$image->id);?>
-		<textarea name="comment"></textarea>
-		<input type="hidden" name="imageid" value="<?=$image->id;?>" />
-		<input type="submit" name="submit" value="Comment" />
-	<?=form_close();?>
+		<h3>Add Comment</h3>
+			<?=form_open('dam_controllers/image/comment/'.$image->id);?>
+			<textarea name="comment"></textarea>
+			<input type="hidden" name="imageid" value="<?=$image->id;?>" />
+			<input type="submit" name="submit" value="Comment" />
+			<?=form_close();?>
 
-	<?php if($comments):?>
+		<?php if($comments):?>
 
 		<h3>Comments</h3>
 		<ol>
 		<?php foreach($comments as $key => $comment):?>
 			<li class="clearfix">
-				<h4 style="text-align: right;"><b><?=$comment->firstname;?> <?=$comment->lastname;?></b></h4><img style="float: right" src="<?="http://www.gravatar.com/avatar.php?size=60&default=".urlencode('/assets/default/images/defaultperson.png')."&gravatar_id=".md5(trim($comment->emailaddress));?>" width="60" height="60" />
-			<blockquote><span><?=nl2br($comment->comment);?></span></blockquote></li>
-	<?php endforeach;?>
+				<h4 style="text-align: right;"><strong><?=$comment->firstname;?> <?=$comment->lastname;?></strong></h4>
+				<img style="float: right" src="<?="http://www.gravatar.com/avatar.php?size=60&default=".urlencode('/assets/default/images/defaultperson.png')."&gravatar_id=".md5(trim($comment->emailaddress));?>" width="60" height="60" />
+				<blockquote><span><?=nl2br($comment->comment);?></span></blockquote>
+			</li>
+		<?php endforeach;?>
 		</ol>
-	<?php endif;?>
+		<?php endif;?>
 	</div>
 
 </div>

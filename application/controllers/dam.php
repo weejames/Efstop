@@ -16,7 +16,7 @@ class DAM extends Admin {
 		$this->load->helper('image_helper');
 		
 		$this->view_data['page_title'] = 'efstop';
-		$this->view_data['page_css'] = array('reset-min', 'autocomplete', 'layout', 'common', array('ie6' => 'ie6'), array('ie7' => 'ie7'));
+		$this->view_data['page_css'] = array('reset-min', 'autocomplete', 'layout', array('ie6' => 'ie6'), array('ie7' => 'ie7'));
 		$this->view_data['page_js'] = array('jquery-1.2.6.pack', 'jquery.media.flash', 'jquery.autocomplete-1.4.1','init');
 		
 		$this->load->model('imagemodel');
@@ -31,10 +31,10 @@ class DAM extends Admin {
 		$this->view_data['searchOrientation'] = "";
 		$this->view_data['searchImagesets'] = array();
 		
-		$this->view_data['modules'] = array('Lightboxes' => site_URL('dam_controllers/lightbox'),
-											'Upload' => site_URL('dam_controllers/image/upload'));
+		$this->view_data['modules'] = array('My Lightboxes' => site_URL('dam_controllers/lightbox'),
+											'Image Upload' => site_URL('dam_controllers/image/upload'));
 		
-		if ($this->authentication->isUserType( array('super', 'admin') )) $this->view_data['modules']['Users'] = site_URL('dam_controllers/damusers');
+		if ($this->authentication->isUserType( array('super', 'admin') )) $this->view_data['modules']['User Management'] = site_URL('dam_controllers/damusers');
 		
 		$this->basemodel->setModel('savedsearches');
 		$this->view_data['savedsearches'] = $this->basemodel->find( array('usersid' => $this->authentication->getuserId()) );

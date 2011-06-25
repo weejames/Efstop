@@ -12,7 +12,7 @@ ini_set('display_errors', '1');
 //paths to CI Folders
 
 
-$system_folder = "./codeigniter_171/system";
+$system_folder = "../CodeIgniter_1.7.3/system";
 $application_folder = "application";
 
 /*
