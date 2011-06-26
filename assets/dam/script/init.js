@@ -85,7 +85,7 @@ $(document).ready (
 							},
 							{ version: '9.0.47',
 							  expressInstall: true });*/
-		$('div#upload ol li:eq(2)').hide(); 
+		// $('div#upload ol li:eq(2)').hide(); 
 		
 		
 		$('.deleteLink').confirmDelete();
