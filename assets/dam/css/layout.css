@@ -147,6 +147,7 @@ div#RecentUploads ul li			{ float: left; display: block; padding: 0.75em 0.75em 
 div#ImageSets		{ clear: both; }
 div#ImageSets h2	{ }
 
+ul.ImageSet			{ display: block; clear: both }
 ul.ImageSet li		{ position: relative; float: left; display: block; margin: 0 0.75em 0.75em 0; }
 ul.ImageSet li img	{ margin: 0 auto; }
 
