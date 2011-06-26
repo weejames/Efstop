@@ -2,22 +2,21 @@
 
 <h2>Set Image Properties</h2>
 
-	<p>Any keyword tags you want to apply to <strong>all</strong> of the images should be entered in the global keywords section.  Remember to separate them with a comma ','.</p>
+	<p>Any keyword tags you want to apply to <strong>all</strong> of the images should be entered in the global keywords section.  Remember to separate them with a comma i.e. 'tom hanks, oscars'.</p>
 
     <?=form_open($package.'/image/viewOrphans');?>
     <fieldset class="orphanProps">
-        <div class="right">
+        <div>
 			<label for="keywords">Global Keyword Tags</label>
 			<input type="text" name="keywords" id="keywords"></textarea>
         </div>
 	</fieldset>
 
 	<ul class="orphans clearfix">
-<?php foreach($images as $key => $image):?>
+	<?php foreach($images as $key => $image):?>
 	<li>
       <a class="thumb" href="#" style="background-image: url('<?=resizedImageURL('image_store/1500s/'.$image->previewname, 150, 150, true);?>'); background-position: center center;"></a>
         	<input type="checkbox" name="delete_<?=$image->id;?>" id="delete_<?=$image->id;?>" class="checkbox" /> <label for="delete_<?=$image->id;?>" class="oops" title="Check this box to delete the image">Oops.. I didn't want to upload this.</label>
-        
         
 			<label for="title_<?=$image->id;?>">Title</label>
 			<input type="text" name="title_<?=$image->id;?>" id="title_<?=$image->id;?>" value="<?=$image->title;?>">

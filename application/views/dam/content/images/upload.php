@@ -1,4 +1,4 @@
-<div id="upload" class="boxWithPadding">
+<div id="upload">
     <h2>Image Upload</h2>
 
 	<p>Supported file formats are JPEG, PNG, GIF, PSD and TIFF at filesizes up to X MB.</p>

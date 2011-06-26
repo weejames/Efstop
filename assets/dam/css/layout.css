@@ -1,39 +1,37 @@
-body { background-color: #fff; font-size: 10px; font-family: Verdana, Arial, sans-serif; line-height: 1.5; font-style: normal; }
+body { font-size: 10px; font-family: Verdana, Arial, sans-serif; line-height: 1.5; font-style: normal; }
+
+/* Font styles and weights */
 
 h2,
 h3,
 h4,
 legend,
-label	{ font-weight: bold; }
-em		{ font-style: italic; }
-strong	{ font-weight: bold; }
+label,
+strong	{ font-weight: bold }
+em		{ font-style: italic }
 
-/* FONT SIZES */
+/* Font sizes */
 
-h2          { font-size: 1.6em; margin: 0 0 0.25em 0; }
-h2 small    { font-size: 0.7em; }
-
-h3          { font-size: 1.4em; }
-h3 small    { font-size: 0.7em; }
-h4          { font-size: 1.3em; }
-small       { font-size: 1.1em; }
-p           { font-size: 1.2em; }
-
-
-#Footer { font-size: 1.0em; color: silver; }
-
+h2          { font-size: 1.6em; margin: 0 0 .25em 0 }
+h2 small    { font-size: .7em }
+h3          { font-size: 1.4em }
+h4          { font-size: 1.2em }
+p           { font-size: 1.2em }
+small       { font-size: 1em }
 label       { font-size: 1em; }
-input       { padding: 1px; }
 
-div#SavedSearches h2 { font-size: 1.3em;}
-.red { color: red;}
+#Footer { font-size: 1em;  }
+
+SavedSearches h2 { font-size: 1.3em;}
 
 #upload p,
 #upload fieldset { margin-bottom: 1.5em }
 
 /* Colour */
 
-input.button	{ background-color: #40833c; color: white; }
+.red { color: red; }
+
+a.deleteLink { color: #8e1400; }
 
 /* Links */
 
@@ -42,61 +40,34 @@ a:focus		{ outline:1px dotted invert; }
 a:hover		{ text-decoration: underline; }
 a:active	{ position:relative; top: 1px }
 
-a.deleteLink { color: #8e1400; }
-
 /* Buttons */
 
-input.button	{ }
-
-input.add2Lb, input.delFromLb {
-    display: block;
-}
-
-/* Horizontal Rules */
-
-hr { height: 1px; background-color: #838383; margin-right: 5px; border: none; }
+input.add2Lb,
+input.delFromLb { display: block; }
 
 /* Forms */
 
-fieldset.accessControls input#emailaddress { width:230px;}
+input[type="text"],
+textarea,
+select { border: 1px solid #bdbdbd; padding: 1px; }
 
-fieldset#addCollection label {display: block;}
+fieldset.accessControls input#emailaddress { width:230px; }
+
+fieldset#addCollection label { display: block; }
+
 textarea#description,
-textarea#keywords
- {height: 80px;width: 210px;}
-
- 
- 
-.box {
-	background-color: #fafafa;
-	border: 1px solid silver;
-}
-.noBordernoPadding {
-    border: none;
-    padding: 0;
-}
-input, textarea, select {
-    border: 1px solid #bdbdbd;
-}
-
-div.upload,
-fieldset.RenameImageSet {
-	background-color: #fafafa;
-	border: 1px solid silver;
-	margin-bottom: 10px;
-}
-
+textarea#keywords{ height: 80px; width: 210px; }
 
 /*	LAYOUT  */
 
-#SuperHeaderWrapper		{ border-bottom: 0.1em solid silver; background-color: #fafafa; height: 6em; }
-#SuperHeader 			{ width: 97.6em; margin: 0 auto; height: 2em; line-height: 2em; }
-#SuperHeader p			{ font-size: 1em; text-align: right; color: #3f3f3f; }
+#SuperHeaderWrapper	{ border-bottom: 0.1em solid silver; background-color: #fafafa; height: 6em; }
+#SuperHeader 		{ width: 97.6em; margin: 0 auto; }
+#SuperHeader p		{ font-size: 1em; text-align: right; color: #3f3f3f; }
 
 #SuperHeader h1 a { display: block; float: left; margin: 0.4em 0 0 -2.2em; width: 9em; height: 5em; background: url(BASEURLassets/dam/images/logo.png) no-repeat; text-indent: -999em; }
 
 #SuperHeader .UserOptions { float: right; width: 40em; margin: 0.2em 0 1.1em 0; }
-#SuperHeader form.Search { float: right; }
+#SuperHeader .Search { float: right; }
 
 #TopNav { float: left; clear: right; }
 #TopNav li { display: inline; float: left; padding: 0 2em 0 0; }
@@ -141,6 +112,13 @@ div.tagpicker ul.alpha { }
 ul.tags			{ max-height: 25em; width: 60em; overflow-y: auto; }
 ul.tags li a 	{ padding: 0 0 0 0; margin: 0 1em 0 0; }
 ul.tags li a 	{ padding: 0 0 0 0; margin: 0 1em 0 0; }
+
+.upload,
+.RenameImageSet {
+	background-color: #fafafa;
+	border: 1px solid silver;
+	margin-bottom: 10px;
+}
 
 /* MAIN POSITIONING STUFF */
 
@@ -245,14 +223,10 @@ div#imageHolder ul li.actions		{ display: block; height: 2.2em; line-height: 2.2
 div#imageHolder ul li.actions p		{ padding: 0 0; }
 div#imageHolder ul li.actions p input	{ margin: 0; padding: 0; float: right; }
 
-div.imageInformation		{ float: right; width: 22em; padding: 0 1em; border: 1px solid #fff; background-color: #fafafa; }
-div.imageInformationProps	{ width: 21.5em; }
+.imageInformation		{ float: right; width: 22em; }
 
 .imageInformation h3,
-.imageInformationProps h3		{ margin-top: 5px; }
-
-.imageInformation label,
-.imageInformationProps label	{ font-weight: bold; display: block; }
+.imageInformationProps h3		{ margin-top: 1em; }
 
 .imageInformation li,
 .imageInformationProps li,
@@ -262,31 +236,22 @@ div.imageInformationProps	{ width: 21.5em; }
 .imageInformation select,
 .imageInformationProps select 	{ width: 90%; display: block; }
 
-.imageInformation option,
-.imageInformationProps option	{ width: auto; }
-
-.imageInformation p.uploader	{ font-size: 1.0em; margin-top: 5px; }
-
-div#Comments			{ width: 40em; }
+div#Comments			{ width: 600px; }
 div#Comments h3			{ margin-top: 1.5em; }
-div#Comments textarea	{ width: 400px; height: 80px; }
-div#Comments input		{ margin-top: 0.5em; }
+div#Comments textarea	{ width: 600px; height: 8em; }
+div#Comments input		{ margin-top: .5em; }
 
 div#Comments ol			{ list-style-type: decimal; }
-div#Comments ol li		{ clear: both; width: 40em; }
+div#Comments ol li		{ clear: both; width: 60em; }
 
 div#Comments ol li h4	{ border-bottom: 0.1em solid silver; }
-div#Comments ol li img	{ padding-top: 0.25em; }
+div#Comments ol li img	{ padding-top: 0.8em; float: left; }
 
-div#Comments ol li blockquote		{ float: left; width: 31em; padding: 0.5em 2em 0.5em 0.5em; background-color: #fafafa; }
-div#Comments ol li blockquote cite	{ display: block; text-align: right; font-style: italic; background-color: #fff;  }
-div#Comments ol li blockquote span	{ font-size: 1.2em;  }
+div#Comments ol li blockquote		{ float: right; width: 51em; padding: .5em; }
+div#Comments ol li blockquote cite	{ display: block; }
+div#Comments ol li blockquote span	{ font-size: 1.2em; }
 
-form.addkeywords input {
-    margin-top: 0.5em;
-}
-
-
+form.addkeywords input { margin-top: 0.5em; }
 
 ul.swatches {
 }
@@ -299,20 +264,12 @@ ul.swatches li {
 a.swatch { display: block; }
 
 fieldset.orphanProps {
-    width: 300px;
-    position: relative;
-    margin: 2.5em 0 0 0;
+    margin-top: 1.5em;
 }
-fieldset.orphanProps label {
-    display: block;
-    font-weight: bold;
-    font-size: 1.3em;
-    margin-bottom: 2px;
-}
-fieldset.orphanProps label,
-fieldset.orphanProps input,
-fieldset.orphanProps select {
-    width: 300px;
+
+fieldset.orphanProps input {
+    width: 30em;
+	display: block
 }
 
 
@@ -331,13 +288,14 @@ ul.NextPrev li.next a.thumb { float: right; }
 
 
 ul.orphans				{ margin: 1em 0 0 0; }
-ul.orphans li			{ width: 190px; float: left; margin: 15px 3.2em 10px 0; padding: 10px; background-color:#efefef;}
-ul.orphans li label		{display: block; font-weight: bold; clear: left;}
-ul.orphans li a.thumb	{display: block; width: 140px; height: 160px; margin: 0 auto; background-repeat: no-repeat; background-position: center center;}
+ul.orphans li			{ width: 19em; float: left; margin: 1.5em 3.2em 1em 0; padding: 1em; background-color:#efefef;}
+ul.orphans li label		{  clear: left;}
+ul.orphans li a.thumb	{ display: block; width: 14em; height: 16em; margin: 0 auto; background-repeat: no-repeat; background-position: center center;}
 
 ul.orphans input,
 ul.orphans textarea,
 ul.orphans select {
+	display: block;
     width: 188px;
     margin-bottom: 5px; 
 }
@@ -349,27 +307,12 @@ ul.orphans input.checkbox {
 	float: left;
 	margin-right: 10px;
 }
-ul.orphans label.oops {
-	width: 188px;
-	font-size: 1.0em;
-	clear: none;
-}
+ul.orphans label.oops { margin-bottom: .5em; display: block; clear: none }
 
-input.orphansubmit {
-	clear: left;
-	text-align: center;
-	position: relative;
-	left: 340px;
-}
+input.orphansubmit { clear: left; }
 
-input.delFromLbox { font-size: 0.8em; }
-
-.left {
-float: left;
-}
-.right {
-float: right;
-}
+.left { float: left; }
+.right { float: right; }
 
 /* LIGHTBOX FOOTER */
 
@@ -465,11 +408,11 @@ fieldset.personalInfo label {
     clear: right; 
 }
 fieldset.loginInfo p {
-width: 210px;
-padding-right: 5px;
-float: right;
-color: #888;
-font-size: 1.1em;
+	width: 210px;
+	padding-right: 5px;
+	float: right;
+	color: #888;
+	font-size: 1.1em;
 }
 fieldset.userControl {
     float: right;

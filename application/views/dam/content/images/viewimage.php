@@ -128,11 +128,11 @@
 	</ul>
 	
 	<div id="Comments">	
-		<h3>Add Comment</h3>
+		<h3>Add a Comment</h3>
 			<?=form_open('dam_controllers/image/comment/'.$image->id);?>
 			<textarea name="comment"></textarea>
 			<input type="hidden" name="imageid" value="<?=$image->id;?>" />
-			<input class="button" type="submit" name="submit" value="Comment" />
+			<input class="button" type="submit" name="submit" value="Submit Comment" />
 			<?=form_close();?>
 
 		<?php if($comments):?>
@@ -141,9 +141,11 @@
 		<ol>
 		<?php foreach($comments as $key => $comment):?>
 			<li class="clearfix">
-				<h4 style="text-align: right;"><strong><?=$comment->firstname;?> <?=$comment->lastname;?></strong></h4>
-				<img style="float: right" src="<?="http://www.gravatar.com/avatar.php?size=60&default=".urlencode('/assets/default/images/defaultperson.png')."&gravatar_id=".md5(trim($comment->emailaddress));?>" width="60" height="60" />
-				<blockquote><span><?=nl2br($comment->comment);?></span></blockquote>
+				<img src="<?="http://www.gravatar.com/avatar.php?size=60&default=".urlencode('/assets/default/images/defaultperson.png')."&gravatar_id=".md5(trim($comment->emailaddress));?>" width="60" height="60" />
+				<blockquote>
+				<h4><strong><?=$comment->firstname;?> <?=$comment->lastname;?></strong></h4>
+				<span><?=nl2br($comment->comment);?></span>
+				</blockquote>
 			</li>
 		<?php endforeach;?>
 		</ol>
