@@ -1,5 +1,6 @@
-<div id="MainContent">
-	<h2>Lightbox: <?=$lightbox->boxtitle;?></h2>
+<h2>Lightbox: <?=$lightbox->boxtitle;?></h2>
+
+<div id="MainContent">	
 
 	<input type="hidden" name="lightboxid" id="lightboxid" class="lightboxid" value="<?=$lightbox->id;?>" />
 
@@ -26,7 +27,7 @@
 	</ul>
 
 	<?php else:?>
-	<p class="notice">There are currentlly no images in this lightbox.</p>
+	<p class="notice">There are currently no images in this Lightbox.</p>
 	<?php endif;?>
 </div>
 
@@ -52,7 +53,7 @@
     <?=form_open($package.'/lightbox/setAccess/'.$lightbox->id, array('id' => 'accessControl'));?>
     
     <fieldset>
-
+		
 		<p>Who do you want to share this Lightbox with?</p>
         
 		<label><input type="radio" value="group" name="whoto" id="whoto_group" checked="checked" class="checkbox" /> A Group</label>
@@ -82,11 +83,11 @@
 			<input type="text" name="emailaddress" value="" id="emailaddress" title="Enter guest email address..." /> 
 		</div>
 
-		<p>What should they be allowed to do?</p>
+		<p stype="padding-top: 1.5em">What should they be allowed to do?</p>
 		<label><input type="radio" value="read" name="access" id="access_read" checked="checked" class="checkbox" />View and download Lightbox images only</label><br />
 		<label><input type="radio" value="full" name="access" id="access_full" class="checkbox" />Add and remove images from the Lightbox</label>
 				
-		<input type="submit" class="submit button" value="Set Access" />
+		<input style="display: block; margin-top: 1.5em" type="submit" class="submit button" value="Set Access" />
 
     </fieldset>
     <?=form_close();?>

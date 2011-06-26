@@ -555,7 +555,6 @@ p.gravatar img {
 
 #Footer { padding-top: 20px; clear: both; text-align: center; }
 
-
 /* Login */
 
 .loginform fieldset {
@@ -577,8 +576,8 @@ p.gravatar img {
 	padding: 3px;
 }
 
-.loginform input#emailaddress { padding-left: 22px; background: url(BASEURLassets/dam/images/user_go.png) no-repeat 3px 3px; width: 220px; }
-.loginform input#password { padding-left: 22px; background: url(BASEURLassets/dam/images/key.png) no-repeat 3px 3px; width: 220px; }
+.loginform input#emailaddress { padding-left: 22px; background: url(BASEURLassets/dam/images/user_go.png) no-repeat 2px 1px; width: 220px; }
+.loginform input#password { padding-left: 22px; background: url(BASEURLassets/dam/images/key.png) no-repeat 2px 1px; width: 220px; }
 
 
 
