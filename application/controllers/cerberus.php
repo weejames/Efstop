@@ -4,7 +4,7 @@ include_once('admin.php');
 
 class Cerberus extends Admin {
     
-	public function Cerberus() {
+	public function __construct() {
         parent::__construct(false);
         $this->load->library('authentication');
         $this->load->helper('cookie');

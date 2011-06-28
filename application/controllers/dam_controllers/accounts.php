@@ -7,8 +7,8 @@ class LightBox extends DAM {
 	protected $package = 'dam_controllers';
 	protected $current_module = 'View Lightboxes';
 	
-	public function LightBox() {
-		parent::DAM();
+	public function __construct() {
+		parent::__construct();
 
 		//this is only accessible by super users.
 		

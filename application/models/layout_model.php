@@ -13,13 +13,13 @@
 
 
 
-class Layout_model extends Model {
+class Layout_model extends MY_Model {
 	public $theme;
 
-	public function Layout_model() {
-		parent::Model();
-		
-		$this->layout =& get_instance();
+	public function __construct() {
+		parent::__construct();
+
+		$this->layout = get_instance();
 		$this->layout->config->load('layout');
 		$this->common = $this->layout->config->item('layout_default') . "/" . $this->layout->config->item('layout_commons');
 		$this->theme  = $this->layout->config->item('layout_default') . "/" . $this->layout->config->item('layout_content');

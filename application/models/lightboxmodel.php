@@ -3,8 +3,8 @@ if (file_exists(APPPATH.'models/basemodel.php')) include_once(APPPATH.'models/ba
 
 class LightboxModel extends BaseModel {
 
-	public function LightboxModel() {
-		parent::BaseModel();
+	public function __construct() {
+		parent::__construct();
 		$this->setModel('lightbox');
 		$this->load->database();
 	}

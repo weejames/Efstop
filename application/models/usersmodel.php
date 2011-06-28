@@ -1,6 +1,5 @@
 <?
 if (file_exists(APPPATH.'models/basemodel.php')) include_once(APPPATH.'models/basemodel.php');
-else include_once(RESPATH.'models/basemodel.php');
 
 class UsersModel extends BaseModel {
 	/**
@@ -21,8 +20,8 @@ class UsersModel extends BaseModel {
 	 * @filesource
 	 */
 
-	public function UsersModel() {
-		parent::BaseModel();
+	public function __construct() {
+		parent::__construct();
 		$this->setModel('users');
 	}
 

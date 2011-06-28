@@ -10,7 +10,7 @@ class DAM extends Admin {
 	public $tag_string = '';
 	
 	
-	public function DAM($requirelogin = 1) {
+	public function __construct($requirelogin = 1) {
 		parent::__construct($requirelogin);
 		$this->load->model('basemodel');
 		$this->load->helper('image_helper');

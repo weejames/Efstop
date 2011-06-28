@@ -7,8 +7,8 @@ class GuestAccess extends DAM {
 	private $s3bucket = ''; // TODO: make a config setting
 	private $local_image_path = ''; // TODO: make a config setting
 	
-	public function GuestAccess() {
-		parent::DAM(false);
+	public function __construct() {
+		parent::__construct(false);
 
 		$this->view_data['page_title'] .= ' - Guest Lightbox Access';		
 	}

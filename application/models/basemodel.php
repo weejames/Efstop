@@ -1,5 +1,5 @@
 <?
-class BaseModel extends Model {
+class BaseModel extends MY_Model {
 	/**
 	 * MODULE NAME   : BaseModel.php
 	 *
@@ -18,9 +18,9 @@ class BaseModel extends Model {
 	public $table_record_count;
 	protected $db_table = '';
 	
-	public function BaseModel() {
-		parent::Model();
-		$this->obj =& get_instance();
+	public function __construct() {
+		parent::__construct();
+		$this->obj = get_instance();
 		$this->load->database();
 	}
 

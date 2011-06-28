@@ -1,9 +1,9 @@
 <?php 
 
-class AccountManager extends Controller {
+class AccountManager extends MY_Controller {
 
 	public function __construct() {
-		parent::Controller();
+		parent::__construct();
 	}
 	
 	public function index() {

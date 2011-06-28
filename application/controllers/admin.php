@@ -1,6 +1,6 @@
 <?php
 
-class Admin extends Controller {
+class Admin extends MY_Controller {
 
     protected $theme = 'admin';
     protected $view_data = array();

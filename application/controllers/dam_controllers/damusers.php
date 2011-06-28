@@ -7,8 +7,8 @@ class DAMUsers extends DAM {
 	protected $package = 'dam_controllers';
 	protected $current_module = 'Users';
 	
-	public function DAMUsers() {
-		parent::DAM();
+	public function __construct() {
+		parent::__construct();
 		$this->view_data['page_title'] .= ' - User Administration';
 		//$this->view_data['showSearch'] = false;
 		

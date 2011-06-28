@@ -1,9 +1,9 @@
 <?php 
 
-class SC extends Controller {
+class SC extends MY_Controller {
 
 	public function __construct() {
-		parent::Controller();
+		parent::__construct();
 	}
 	
 	public function lightboxes() {

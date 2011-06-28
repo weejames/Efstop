@@ -1,11 +1,11 @@
 <?php
 
-class AssetManager extends Controller {
+class AssetManager extends MY_Controller {
 	private $echo_string = '';
 	private $used_js = array();
 	 
-	public function AssetManager() {
-        parent::Controller();
+	public function __construct() {
+        parent::__construct();
     }
 
     public function index() {
@@ -106,7 +106,10 @@ class AssetManager extends Controller {
     
     public function imagesizer($path, $width = false, $height = false, $maintain_ratio = true, $master_dim = 'auto', $crop_position = false) {
 		$filepath = urldecode($path);
-    	$filetype = end(explode(".", $filepath));
+		
+		$pathParts = explode(".", $filepath);
+		
+    	$filetype = end($pathParts);
     	
     	$cachedfile = md5($filepath.(int)$width.(int)$height.(int)$maintain_ratio.$master_dim.$crop_position).'.'.$filetype;
 

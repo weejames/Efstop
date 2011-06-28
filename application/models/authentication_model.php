@@ -9,10 +9,10 @@
  * @author		James Constable
  * @copyright	Copyright (c) 2007, ocean70.com All rights reserved.
  */
-class Authentication_model extends Model {
+class Authentication_model extends MY_Model {
 
 	public function Authentication_model() {
-		parent::Model();
+		parent::__construct();
 		$this->load->database();
 	}
 	

@@ -5,8 +5,8 @@ class TagOrganiser extends DAM {
 	
 	protected $package = 'dam_controllers';
 	
-	public function TagOrganiser() {
-		parent::DAM();
+	public function __construct() {
+		parent::__construct();
 
 		$this->view_data['page_title'] .= ' - Tag Organiser';
 	

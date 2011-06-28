@@ -3,8 +3,8 @@ if (file_exists(APPPATH.'models/basemodel.php')) include_once(APPPATH.'models/ba
 
 class ImageSetModel extends BaseModel {
 
-	public function ImageSetModel() {
-		parent::BaseModel();
+	public function __construct() {
+		parent::__construct();
 		$this->setModel('imagesets');
 		$this->load->database();
 	}

@@ -7,12 +7,12 @@ class Image extends DAM {
 	protected $package = 'dam_controllers';
 	protected $current_module = 'Upload Images';
 	private $s3bucket = ''; // TODO: make a config setting
-	private $local_image_path = '/var/www/efstop/image_store/'; // TODO: make a config setting
+	private $local_image_path = '/var/www/phpapps/efstop/image_store/'; // TODO: make a config setting
 	
-	public function Image() {
+	public function __construct() {
 		$login = 1;
 		if ( stristr ( $_SERVER["HTTP_USER_AGENT"], 'Flash' ) ) $login = 0;
-		parent::DAM($login); 
+		parent::__construct($login); 
 		
 		$this->load->helper('image_helper');
 		$this->view_data['page_title'] .= ' &middot; Images';
@@ -179,7 +179,7 @@ class Image extends DAM {
 				$this->load->library('imagecolorextract');
 				
 				$uploadData = $this->upload->data();
-				
+				$image_data = new stdClass();
 				$image_data->filename 	= $uploadData['file_name'];
 				$image_data->title	= $uploadData['orig_name'];
 				$image_data->filesize 	= $uploadData['file_size'];
@@ -388,6 +388,8 @@ class Image extends DAM {
 				$delete = $this->input->post('delete_'.$image);
 				
 				if (!$delete) {
+					
+					$image_data = new stdClass();
 				
 					$image_data->title = $this->input->post('title_'.$image);
 					$image_data->description = $this->input->post('description_'.$image);

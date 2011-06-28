@@ -1,12 +1,12 @@
 <?php 
 
-class API extends Controller {
+class API extends MY_Controller {
 
 	private $valid_formats = array('json');
 	private $format = false;
 
 	public function __construct() {
-		parent::Controller();
+		parent::__construct();
 	}
 	
 	public function rest($format = false, $method = false) {

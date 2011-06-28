@@ -3,8 +3,8 @@ if (file_exists(APPPATH.'models/basemodel.php')) include_once(APPPATH.'models/ba
 
 class AccountsModel extends BaseModel {
 
-	public function AccountsModel() {
-		parent::BaseModel();
+	public function __construct() {
+		parent::__construct();
 		$this->setModel('accounts');
 		$this->load->database();
 	}

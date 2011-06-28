@@ -138,6 +138,8 @@ function style($file, $attributes = null) {
 	$themePath = $thisobject->layout->getTheme() . "/";
 	$thisobject->load->library('user_agent');
 	
+	$css = new stdClass();
+	
 	$css->screen = array();
 	$css->ie6 = array();
 	$css->ie7 = array();
