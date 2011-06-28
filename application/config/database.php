@@ -34,10 +34,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = "pqubte01";
-$db['default']['username'] = "remote";
-$db['default']['password'] = "r3m0t34cc3ss";
-$db['default']['database'] = "efstop";
+$db['default']['hostname'] = "";
+$db['default']['username'] = "";
+$db['default']['password'] = "";
+$db['default']['database'] = "";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = false;
